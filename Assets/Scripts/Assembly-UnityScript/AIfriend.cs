@@ -1,579 +1,539 @@
-﻿using System;
+﻿using Boo.Lang;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using Boo.Lang;
 using UnityEngine;
 
-// Token: 0x0200000A RID: 10
+[Serializable]
 [RequireComponent(typeof(Status))]
 [RequireComponent(typeof(CharacterMotor))]
 [AddComponentMenu("Action-RPG Kit/Create Ally")]
-[Serializable]
 public class AIfriend : MonoBehaviour
 {
-	// Token: 0x06000015 RID: 21 RVA: 0x00002678 File Offset: 0x00000878
-	public AIfriend()
+	[Serializable]
+	[CompilerGenerated]
+	internal sealed class _0024Attack_0024114 : GenericGenerator<WaitForSeconds>
 	{
-		this.approachDistance = 3f;
-		this.detectRange = 15f;
-		this.lostSight = 100f;
-		this.speed = 4f;
-		this.attackAnimation = new AnimationClip[1];
-		this.attackCast = 0.5f;
-		this.attackDelay = 1f;
-		this.continueAttack = 1;
-		this.continueAttackDelay = 0.8f;
-		this.attackType = AIatkType.Immobile;
-		this.attackVoice = new AudioClip[3];
+		internal AIfriend _0024self__0024120;
+
+		public _0024Attack_0024114(AIfriend self_)
+		{
+			_0024self__0024120 = self_;
+		}
+
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		{
+			return new _0024(_0024self__0024120);
+		}
 	}
 
-	// Token: 0x06000016 RID: 22 RVA: 0x00002700 File Offset: 0x00000900
-	public virtual void Start()
+	[Serializable]
+	[CompilerGenerated]
+	internal sealed class _0024MeleeDash_0024121 : GenericGenerator<WaitForSeconds>
 	{
-		this.gameObject.tag = "Ally";
-		if (!this.mainModel)
+		internal AIfriend _0024self__0024123;
+
+		public _0024MeleeDash_0024121(AIfriend self_)
 		{
-			this.mainModel = this.gameObject;
+			_0024self__0024123 = self_;
 		}
-		((Status)this.GetComponent(typeof(Status))).mainModel = this.mainModel;
-		if (!this.master)
+
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		{
+			return new _0024(_0024self__0024123);
+		}
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	internal sealed class _0024KnockBack_0024124 : GenericGenerator<WaitForSeconds>
+	{
+		internal AIfriend _0024self__0024126;
+
+		public _0024KnockBack_0024124(AIfriend self_)
+		{
+			_0024self__0024126 = self_;
+		}
+
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		{
+			return new _0024(_0024self__0024126);
+		}
+	}
+
+	public Transform master;
+
+	public GameObject mainModel;
+
+	public bool useMecanim;
+
+	public Animator animator;
+
+	public Transform followTarget;
+
+	public float approachDistance;
+
+	public float detectRange;
+
+	public float lostSight;
+
+	public float speed;
+
+	public AnimationClip movingAnimation;
+
+	public AnimationClip idleAnimation;
+
+	public AnimationClip[] attackAnimation;
+
+	public AnimationClip hurtAnimation;
+
+	private bool flinch;
+
+	public bool stability;
+
+	public bool freeze;
+
+	public Transform attackPrefab;
+
+	public Transform attackPoint;
+
+	public float attackCast;
+
+	public float attackDelay;
+
+	private int continueAttack;
+
+	public float continueAttackDelay;
+
+	private AIStatef followState;
+
+	private float distance;
+
+	private float masterDistance;
+
+	private int atk;
+
+	private int mag;
+
+	private bool cancelAttack;
+
+	private bool meleefwd;
+
+	public AIatkType attackType;
+
+	public AudioClip[] attackVoice;
+
+	public AudioClip hurtVoice;
+
+	public AIfriend()
+	{
+		approachDistance = 3f;
+		detectRange = 15f;
+		lostSight = 100f;
+		speed = 4f;
+		attackAnimation = new AnimationClip[1];
+		attackCast = 0.5f;
+		attackDelay = 1f;
+		continueAttack = 1;
+		continueAttackDelay = 0.8f;
+		attackType = AIatkType.Immobile;
+		attackVoice = new AudioClip[3];
+	}
+
+	public override void Start()
+	{
+		gameObject.tag = "Ally";
+		if (!mainModel)
+		{
+			mainModel = gameObject;
+		}
+		((Status)GetComponent(typeof(Status))).mainModel = mainModel;
+		if (!master)
 		{
 			MonoBehaviour.print("Please Assign It's Master first");
 		}
-		if (!this.attackPoint)
+		if (!attackPoint)
 		{
-			this.attackPoint = this.transform;
+			attackPoint = transform;
 		}
-		((Status)this.GetComponent(typeof(Status))).useMecanim = this.useMecanim;
-		this.continueAttack = this.attackAnimation.Length;
-		this.atk = ((Status)this.GetComponent(typeof(Status))).atk;
-		this.mag = ((Status)this.GetComponent(typeof(Status))).matk;
-		this.followState = AIStatef.FollowMaster;
-		if (!this.useMecanim)
+		((Status)GetComponent(typeof(Status))).useMecanim = useMecanim;
+		continueAttack = attackAnimation.Length;
+		atk = ((Status)GetComponent(typeof(Status))).atk;
+		mag = ((Status)GetComponent(typeof(Status))).matk;
+		followState = AIStatef.FollowMaster;
+		if (!useMecanim)
 		{
-			this.mainModel.GetComponent<Animation>().Play(this.movingAnimation.name);
-			if (this.hurtAnimation)
+			mainModel.GetComponent<Animation>().Play(movingAnimation.name);
+			if ((bool)hurtAnimation)
 			{
-				this.mainModel.GetComponent<Animation>()[this.hurtAnimation.name].layer = 10;
+				mainModel.GetComponent<Animation>()[hurtAnimation.name].layer = 10;
 			}
 		}
 		else
 		{
-			if (!this.animator)
+			if (!animator)
 			{
-				this.animator = (Animator)this.mainModel.GetComponent(typeof(Animator));
+				animator = (Animator)mainModel.GetComponent(typeof(Animator));
 			}
-			this.animator.SetBool("run", true);
+			animator.SetBool("run", value: true);
 		}
-		if (this.master)
+		if ((bool)master)
 		{
-			Physics.IgnoreCollision(this.GetComponent<Collider>(), this.master.GetComponent<Collider>());
+			Physics.IgnoreCollision(GetComponent<Collider>(), master.GetComponent<Collider>());
 		}
 	}
 
-	// Token: 0x06000017 RID: 23 RVA: 0x000028CC File Offset: 0x00000ACC
-	public virtual Vector3 GetDestination()
+	public override Vector3 GetDestination()
 	{
-		Vector3 position = this.followTarget.position;
-		position.y = this.transform.position.y;
+		Vector3 position = followTarget.position;
+		Vector3 position2 = transform.position;
+		position.y = position2.y;
 		return position;
 	}
 
-	// Token: 0x06000018 RID: 24 RVA: 0x00002900 File Offset: 0x00000B00
-	public virtual Vector3 GetMasterPosition()
+	public override Vector3 GetMasterPosition()
 	{
 		Vector3 result;
-		if (!this.master)
+		if ((bool)master)
 		{
-			Vector3 vector;
-			result = vector;
+			Vector3 position = master.position;
+			Vector3 position2 = transform.position;
+			position.y = position2.y;
+			result = position;
 		}
 		else
 		{
-			Vector3 position = this.master.position;
-			position.y = this.transform.position.y;
-			result = position;
+			Vector3 vector = default(Vector3);
+			result = vector;
 		}
 		return result;
 	}
 
-	// Token: 0x06000019 RID: 25 RVA: 0x0000294C File Offset: 0x00000B4C
-	public virtual void Update()
+	public override void Update()
 	{
-		CharacterController characterController = (CharacterController)this.GetComponent(typeof(CharacterController));
-		Status status = (Status)this.GetComponent(typeof(Status));
-		if (!this.master)
+		CharacterController characterController = (CharacterController)GetComponent(typeof(CharacterController));
+		Status status = (Status)GetComponent(typeof(Status));
+		if (!master)
 		{
 			status.Death();
 		}
-		else if (this.meleefwd && !status.freeze)
+		else if (meleefwd && !status.freeze)
 		{
-			Vector3 a = this.transform.TransformDirection(Vector3.forward);
-			characterController.Move(a * (float)5 * Time.deltaTime);
-		}
-		else if (!this.freeze && !status.freeze)
-		{
-			if (this.useMecanim)
-			{
-				this.animator.SetBool("hurt", this.flinch);
-			}
-			if (this.flinch)
-			{
-				this.cancelAttack = true;
-				Vector3 a = this.transform.TransformDirection(Vector3.back);
-				characterController.SimpleMove(a * (float)5);
-			}
-			else
-			{
-				if ((this.master.position - this.transform.position).magnitude > 30f)
-				{
-					Vector3 position = this.master.position;
-					position.y += 1.7f;
-					this.transform.position = position;
-				}
-				this.FindClosest();
-				if (this.followState == AIStatef.FollowMaster)
-				{
-					if ((this.master.position - this.transform.position).magnitude <= 3f)
-					{
-						this.followState = AIStatef.Idle;
-						if (!this.useMecanim)
-						{
-							this.mainModel.GetComponent<Animation>().CrossFade(this.idleAnimation.name, 0.2f);
-						}
-						else
-						{
-							this.animator.SetBool("run", false);
-						}
-					}
-					else
-					{
-						Vector3 a2 = this.transform.TransformDirection(Vector3.forward);
-						characterController.Move(a2 * this.speed * Time.deltaTime);
-						Vector3 position2 = this.master.position;
-						position2.y = this.transform.position.y;
-						this.transform.LookAt(position2);
-					}
-				}
-				else if (this.followState == AIStatef.Moving)
-				{
-					this.masterDistance = (this.transform.position - this.GetMasterPosition()).magnitude;
-					if (this.masterDistance > this.detectRange + 5f)
-					{
-						this.followState = AIStatef.FollowMaster;
-						if (!this.useMecanim)
-						{
-							this.mainModel.GetComponent<Animation>().CrossFade(this.movingAnimation.name, 0.2f);
-						}
-						else
-						{
-							this.animator.SetBool("run", true);
-						}
-					}
-					else if ((this.followTarget.position - this.transform.position).magnitude <= this.approachDistance)
-					{
-						this.followState = AIStatef.Pausing;
-						if (!this.useMecanim)
-						{
-							this.mainModel.GetComponent<Animation>().CrossFade(this.idleAnimation.name, 0.2f);
-						}
-						else
-						{
-							this.animator.SetBool("run", false);
-						}
-						this.StartCoroutine(this.Attack());
-					}
-					else if ((this.followTarget.position - this.transform.position).magnitude >= this.lostSight)
-					{
-						((Status)this.GetComponent(typeof(Status))).health = ((Status)this.GetComponent(typeof(Status))).maxHealth;
-						this.followState = AIStatef.Idle;
-						if (!this.useMecanim)
-						{
-							this.mainModel.GetComponent<Animation>().CrossFade(this.idleAnimation.name, 0.2f);
-						}
-						else
-						{
-							this.animator.SetBool("run", false);
-						}
-					}
-					else
-					{
-						Vector3 a2 = this.transform.TransformDirection(Vector3.forward);
-						characterController.Move(a2 * this.speed * Time.deltaTime);
-						Vector3 position3 = this.followTarget.position;
-						position3.y = this.transform.position.y;
-						this.transform.LookAt(position3);
-					}
-				}
-				else if (this.followState == AIStatef.Pausing)
-				{
-					Vector3 position4 = this.followTarget.position;
-					position4.y = this.transform.position.y;
-					this.transform.LookAt(position4);
-					this.distance = (this.transform.position - this.GetDestination()).magnitude;
-					this.masterDistance = (this.transform.position - this.GetMasterPosition()).magnitude;
-					if (this.masterDistance > 12f)
-					{
-						this.followState = AIStatef.FollowMaster;
-						if (!this.useMecanim)
-						{
-							this.mainModel.GetComponent<Animation>().CrossFade(this.movingAnimation.name, 0.2f);
-						}
-						else
-						{
-							this.animator.SetBool("run", true);
-						}
-					}
-					else if (this.distance > this.approachDistance)
-					{
-						this.followState = AIStatef.Moving;
-						if (!this.useMecanim)
-						{
-							this.mainModel.GetComponent<Animation>().CrossFade(this.movingAnimation.name, 0.2f);
-						}
-						else
-						{
-							this.animator.SetBool("run", true);
-						}
-					}
-				}
-				else if (this.followState == AIStatef.Idle)
-				{
-					Vector3 position5 = this.followTarget.position;
-					position5.y = this.transform.position.y - position5.y;
-					int num = ((Status)this.GetComponent(typeof(Status))).maxHealth - ((Status)this.GetComponent(typeof(Status))).health;
-					this.distance = (this.transform.position - this.GetDestination()).magnitude;
-					this.masterDistance = (this.transform.position - this.GetMasterPosition()).magnitude;
-					if (this.distance < this.detectRange && Mathf.Abs(position5.y) <= (float)4 && this.followTarget)
-					{
-						this.followState = AIStatef.Moving;
-						if (!this.useMecanim)
-						{
-							this.mainModel.GetComponent<Animation>().CrossFade(this.movingAnimation.name, 0.2f);
-						}
-						else
-						{
-							this.animator.SetBool("run", true);
-						}
-					}
-					else if (this.masterDistance > 3f)
-					{
-						this.followState = AIStatef.FollowMaster;
-						if (!this.useMecanim)
-						{
-							this.mainModel.GetComponent<Animation>().CrossFade(this.movingAnimation.name, 0.2f);
-						}
-						else
-						{
-							this.animator.SetBool("run", true);
-						}
-					}
-				}
-			}
-		}
-	}
-
-	// Token: 0x0600001A RID: 26 RVA: 0x000030C0 File Offset: 0x000012C0
-	public virtual IEnumerator Attack()
-	{
-		return new AIfriend.$Attack$114(this).GetEnumerator();
-	}
-
-	// Token: 0x0600001B RID: 27 RVA: 0x000030D0 File Offset: 0x000012D0
-	public virtual void CheckDistance()
-	{
-		this.masterDistance = (this.transform.position - this.GetMasterPosition()).magnitude;
-		if (this.masterDistance > this.detectRange + 5f)
-		{
-			this.followState = AIStatef.FollowMaster;
-			if (!this.useMecanim)
-			{
-				this.mainModel.GetComponent<Animation>().CrossFade(this.movingAnimation.name, 0.2f);
-			}
-			else
-			{
-				this.animator.SetBool("run", true);
-			}
-		}
-		else if (!this.followTarget)
-		{
-			if (!this.useMecanim)
-			{
-				this.mainModel.GetComponent<Animation>().CrossFade(this.idleAnimation.name, 0.2f);
-			}
-			else
-			{
-				this.animator.SetBool("run", false);
-			}
-			this.followState = AIStatef.Idle;
+			Vector3 a = transform.TransformDirection(Vector3.forward);
+			characterController.Move(a * 5f * Time.deltaTime);
 		}
 		else
 		{
-			float magnitude = (this.followTarget.position - this.transform.position).magnitude;
-			if (magnitude <= this.approachDistance)
+			if (freeze || status.freeze)
 			{
-				Vector3 position = this.followTarget.position;
-				position.y = this.transform.position.y;
-				this.transform.LookAt(position);
-				this.StartCoroutine(this.Attack());
+				return;
 			}
-			else
+			if (useMecanim)
 			{
-				this.followState = AIStatef.Moving;
-				if (!this.useMecanim)
+				animator.SetBool("hurt", flinch);
+			}
+			if (flinch)
+			{
+				cancelAttack = true;
+				Vector3 a = transform.TransformDirection(Vector3.back);
+				characterController.SimpleMove(a * 5f);
+				return;
+			}
+			if (!((master.position - transform.position).magnitude <= 30f))
+			{
+				Vector3 position = master.position;
+				position.y += 1.7f;
+				transform.position = position;
+			}
+			FindClosest();
+			if (followState == AIStatef.FollowMaster)
+			{
+				if (!((master.position - transform.position).magnitude > 3f))
 				{
-					this.mainModel.GetComponent<Animation>().CrossFade(this.movingAnimation.name, 0.2f);
+					followState = AIStatef.Idle;
+					if (!useMecanim)
+					{
+						mainModel.GetComponent<Animation>().CrossFade(idleAnimation.name, 0.2f);
+					}
+					else
+					{
+						animator.SetBool("run", value: false);
+					}
 				}
 				else
 				{
-					this.animator.SetBool("run", true);
+					Vector3 a2 = transform.TransformDirection(Vector3.forward);
+					characterController.Move(a2 * speed * Time.deltaTime);
+					Vector3 position2 = master.position;
+					Vector3 position3 = transform.position;
+					position2.y = position3.y;
+					transform.LookAt(position2);
+				}
+			}
+			else if (followState == AIStatef.Moving)
+			{
+				masterDistance = (transform.position - GetMasterPosition()).magnitude;
+				if (!(masterDistance <= detectRange + 5f))
+				{
+					followState = AIStatef.FollowMaster;
+					if (!useMecanim)
+					{
+						mainModel.GetComponent<Animation>().CrossFade(movingAnimation.name, 0.2f);
+					}
+					else
+					{
+						animator.SetBool("run", value: true);
+					}
+				}
+				else if (!((followTarget.position - transform.position).magnitude > approachDistance))
+				{
+					followState = AIStatef.Pausing;
+					if (!useMecanim)
+					{
+						mainModel.GetComponent<Animation>().CrossFade(idleAnimation.name, 0.2f);
+					}
+					else
+					{
+						animator.SetBool("run", value: false);
+					}
+					StartCoroutine(Attack());
+				}
+				else if (!((followTarget.position - transform.position).magnitude < lostSight))
+				{
+					((Status)GetComponent(typeof(Status))).health = ((Status)GetComponent(typeof(Status))).maxHealth;
+					followState = AIStatef.Idle;
+					if (!useMecanim)
+					{
+						mainModel.GetComponent<Animation>().CrossFade(idleAnimation.name, 0.2f);
+					}
+					else
+					{
+						animator.SetBool("run", value: false);
+					}
+				}
+				else
+				{
+					Vector3 a2 = transform.TransformDirection(Vector3.forward);
+					characterController.Move(a2 * speed * Time.deltaTime);
+					Vector3 position4 = followTarget.position;
+					Vector3 position5 = transform.position;
+					position4.y = position5.y;
+					transform.LookAt(position4);
+				}
+			}
+			else if (followState == AIStatef.Pausing)
+			{
+				Vector3 position6 = followTarget.position;
+				Vector3 position7 = transform.position;
+				position6.y = position7.y;
+				transform.LookAt(position6);
+				distance = (transform.position - GetDestination()).magnitude;
+				masterDistance = (transform.position - GetMasterPosition()).magnitude;
+				if (!(masterDistance <= 12f))
+				{
+					followState = AIStatef.FollowMaster;
+					if (!useMecanim)
+					{
+						mainModel.GetComponent<Animation>().CrossFade(movingAnimation.name, 0.2f);
+					}
+					else
+					{
+						animator.SetBool("run", value: true);
+					}
+				}
+				else if (!(distance <= approachDistance))
+				{
+					followState = AIStatef.Moving;
+					if (!useMecanim)
+					{
+						mainModel.GetComponent<Animation>().CrossFade(movingAnimation.name, 0.2f);
+					}
+					else
+					{
+						animator.SetBool("run", value: true);
+					}
+				}
+			}
+			else
+			{
+				if (followState != AIStatef.Idle)
+				{
+					return;
+				}
+				Vector3 position8 = followTarget.position;
+				Vector3 position9 = transform.position;
+				position8.y = position9.y - position8.y;
+				int num = ((Status)GetComponent(typeof(Status))).maxHealth - ((Status)GetComponent(typeof(Status))).health;
+				distance = (transform.position - GetDestination()).magnitude;
+				masterDistance = (transform.position - GetMasterPosition()).magnitude;
+				if (!(distance >= detectRange) && !(Mathf.Abs(position8.y) > 4f) && (bool)followTarget)
+				{
+					followState = AIStatef.Moving;
+					if (!useMecanim)
+					{
+						mainModel.GetComponent<Animation>().CrossFade(movingAnimation.name, 0.2f);
+					}
+					else
+					{
+						animator.SetBool("run", value: true);
+					}
+				}
+				else if (!(masterDistance <= 3f))
+				{
+					followState = AIStatef.FollowMaster;
+					if (!useMecanim)
+					{
+						mainModel.GetComponent<Animation>().CrossFade(movingAnimation.name, 0.2f);
+					}
+					else
+					{
+						animator.SetBool("run", value: true);
+					}
 				}
 			}
 		}
 	}
 
-	// Token: 0x0600001C RID: 28 RVA: 0x00003280 File Offset: 0x00001480
-	public virtual GameObject FindClosest()
+	public override IEnumerator Attack()
 	{
-		GameObject[] array = GameObject.FindGameObjectsWithTag("Enemy");
+		return new _0024Attack_0024114(this).GetEnumerator();
+	}
+
+	public override void CheckDistance()
+	{
+		masterDistance = (transform.position - GetMasterPosition()).magnitude;
+		if (!(masterDistance <= detectRange + 5f))
+		{
+			followState = AIStatef.FollowMaster;
+			if (!useMecanim)
+			{
+				mainModel.GetComponent<Animation>().CrossFade(movingAnimation.name, 0.2f);
+			}
+			else
+			{
+				animator.SetBool("run", value: true);
+			}
+			return;
+		}
+		if (!followTarget)
+		{
+			if (!useMecanim)
+			{
+				mainModel.GetComponent<Animation>().CrossFade(idleAnimation.name, 0.2f);
+			}
+			else
+			{
+				animator.SetBool("run", value: false);
+			}
+			followState = AIStatef.Idle;
+			return;
+		}
+		float magnitude = (followTarget.position - transform.position).magnitude;
+		if (!(magnitude > approachDistance))
+		{
+			Vector3 position = followTarget.position;
+			Vector3 position2 = transform.position;
+			position.y = position2.y;
+			transform.LookAt(position);
+			StartCoroutine(Attack());
+		}
+		else
+		{
+			followState = AIStatef.Moving;
+			if (!useMecanim)
+			{
+				mainModel.GetComponent<Animation>().CrossFade(movingAnimation.name, 0.2f);
+			}
+			else
+			{
+				animator.SetBool("run", value: true);
+			}
+		}
+	}
+
+	public override GameObject FindClosest()
+	{
+		GameObject[] array = null;
+		array = GameObject.FindGameObjectsWithTag("Enemy");
+		object result;
 		if (array != null)
 		{
 			GameObject gameObject = null;
 			float num = float.PositiveInfinity;
-			Vector3 position = this.transform.position;
+			Vector3 position = transform.position;
 			int i = 0;
 			GameObject[] array2 = array;
-			int length = array2.Length;
-			while (i < length)
+			for (int length = array2.Length; i < length; i++)
 			{
 				float sqrMagnitude = (array2[i].transform.position - position).sqrMagnitude;
-				if (sqrMagnitude < num)
+				if (!(sqrMagnitude >= num))
 				{
 					gameObject = array2[i];
 					num = sqrMagnitude;
 				}
-				i++;
 			}
-			if (gameObject)
+			if ((bool)gameObject)
 			{
-				this.followTarget = gameObject.transform;
-				return gameObject;
+				followTarget = gameObject.transform;
+				result = gameObject;
+				goto IL_00ef;
 			}
-			this.followTarget = null;
-			this.followState = AIStatef.FollowMaster;
-			if (!this.useMecanim)
+			followTarget = null;
+			followState = AIStatef.FollowMaster;
+			if (!useMecanim)
 			{
-				this.mainModel.GetComponent<Animation>().CrossFade(this.movingAnimation.name, 0.2f);
+				mainModel.GetComponent<Animation>().CrossFade(movingAnimation.name, 0.2f);
 			}
 			else
 			{
-				this.animator.SetBool("run", true);
+				animator.SetBool("run", value: true);
 			}
 		}
-		return null;
+		result = null;
+		goto IL_00ef;
+		IL_00ef:
+		return (GameObject)result;
 	}
 
-	// Token: 0x0600001D RID: 29 RVA: 0x0000337C File Offset: 0x0000157C
-	public virtual IEnumerator MeleeDash()
+	public override IEnumerator MeleeDash()
 	{
-		return new AIfriend.$MeleeDash$121(this).GetEnumerator();
+		return new _0024MeleeDash_0024121(this).GetEnumerator();
 	}
 
-	// Token: 0x0600001E RID: 30 RVA: 0x0000338C File Offset: 0x0000158C
-	public virtual void Flinch(Vector3 dir)
+	public override void Flinch(Vector3 dir)
 	{
-		if (!this.stability)
+		if (!stability)
 		{
-			if (this.hurtVoice && ((Status)this.GetComponent(typeof(Status))).health >= 1)
+			if ((bool)hurtVoice && ((Status)GetComponent(typeof(Status))).health >= 1)
 			{
-				this.GetComponent<AudioSource>().clip = this.hurtVoice;
-				this.GetComponent<AudioSource>().Play();
+				GetComponent<AudioSource>().clip = hurtVoice;
+				GetComponent<AudioSource>().Play();
 			}
-			this.cancelAttack = true;
-			if (this.followTarget)
+			cancelAttack = true;
+			if ((bool)followTarget)
 			{
-				Vector3 position = this.followTarget.position;
-				position.y = this.transform.position.y;
-				this.transform.LookAt(position);
+				Vector3 position = followTarget.position;
+				Vector3 position2 = transform.position;
+				position.y = position2.y;
+				transform.LookAt(position);
 			}
-			this.StartCoroutine(this.KnockBack());
-			if (!this.useMecanim)
+			StartCoroutine(KnockBack());
+			if (!useMecanim)
 			{
-				this.mainModel.GetComponent<Animation>().PlayQueued(this.hurtAnimation.name, QueueMode.PlayNow);
-				this.mainModel.GetComponent<Animation>().CrossFade(this.movingAnimation.name, 0.2f);
+				mainModel.GetComponent<Animation>().PlayQueued(hurtAnimation.name, QueueMode.PlayNow);
+				mainModel.GetComponent<Animation>().CrossFade(movingAnimation.name, 0.2f);
 			}
-			this.followState = AIStatef.Moving;
+			followState = AIStatef.Moving;
 		}
 	}
 
-	// Token: 0x0600001F RID: 31 RVA: 0x0000349C File Offset: 0x0000169C
-	public virtual IEnumerator KnockBack()
+	public override IEnumerator KnockBack()
 	{
-		return new AIfriend.$KnockBack$124(this).GetEnumerator();
+		return new _0024KnockBack_0024124(this).GetEnumerator();
 	}
 
-	// Token: 0x06000020 RID: 32 RVA: 0x000034AC File Offset: 0x000016AC
-	public virtual void Main()
+	public override void Main()
 	{
-	}
-
-	// Token: 0x04000024 RID: 36
-	public Transform master;
-
-	// Token: 0x04000025 RID: 37
-	public GameObject mainModel;
-
-	// Token: 0x04000026 RID: 38
-	public bool useMecanim;
-
-	// Token: 0x04000027 RID: 39
-	public Animator animator;
-
-	// Token: 0x04000028 RID: 40
-	public Transform followTarget;
-
-	// Token: 0x04000029 RID: 41
-	public float approachDistance;
-
-	// Token: 0x0400002A RID: 42
-	public float detectRange;
-
-	// Token: 0x0400002B RID: 43
-	public float lostSight;
-
-	// Token: 0x0400002C RID: 44
-	public float speed;
-
-	// Token: 0x0400002D RID: 45
-	public AnimationClip movingAnimation;
-
-	// Token: 0x0400002E RID: 46
-	public AnimationClip idleAnimation;
-
-	// Token: 0x0400002F RID: 47
-	public AnimationClip[] attackAnimation;
-
-	// Token: 0x04000030 RID: 48
-	public AnimationClip hurtAnimation;
-
-	// Token: 0x04000031 RID: 49
-	private bool flinch;
-
-	// Token: 0x04000032 RID: 50
-	public bool stability;
-
-	// Token: 0x04000033 RID: 51
-	public bool freeze;
-
-	// Token: 0x04000034 RID: 52
-	public Transform attackPrefab;
-
-	// Token: 0x04000035 RID: 53
-	public Transform attackPoint;
-
-	// Token: 0x04000036 RID: 54
-	public float attackCast;
-
-	// Token: 0x04000037 RID: 55
-	public float attackDelay;
-
-	// Token: 0x04000038 RID: 56
-	private int continueAttack;
-
-	// Token: 0x04000039 RID: 57
-	public float continueAttackDelay;
-
-	// Token: 0x0400003A RID: 58
-	private AIStatef followState;
-
-	// Token: 0x0400003B RID: 59
-	private float distance;
-
-	// Token: 0x0400003C RID: 60
-	private float masterDistance;
-
-	// Token: 0x0400003D RID: 61
-	private int atk;
-
-	// Token: 0x0400003E RID: 62
-	private int mag;
-
-	// Token: 0x0400003F RID: 63
-	private bool cancelAttack;
-
-	// Token: 0x04000040 RID: 64
-	private bool meleefwd;
-
-	// Token: 0x04000041 RID: 65
-	public AIatkType attackType;
-
-	// Token: 0x04000042 RID: 66
-	public AudioClip[] attackVoice;
-
-	// Token: 0x04000043 RID: 67
-	public AudioClip hurtVoice;
-
-	// Token: 0x0200000B RID: 11
-	[CompilerGenerated]
-	[Serializable]
-	internal sealed class $Attack$114 : GenericGenerator<WaitForSeconds>
-	{
-		// Token: 0x06000021 RID: 33 RVA: 0x000034B0 File Offset: 0x000016B0
-		public $Attack$114(AIfriend self_)
-		{
-			this.$self_$120 = self_;
-		}
-
-		// Token: 0x06000022 RID: 34 RVA: 0x000034C0 File Offset: 0x000016C0
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
-		{
-			return new AIfriend.$Attack$114.$(this.$self_$120);
-		}
-
-		// Token: 0x04000044 RID: 68
-		internal AIfriend $self_$120;
-	}
-
-	// Token: 0x0200000D RID: 13
-	[CompilerGenerated]
-	[Serializable]
-	internal sealed class $MeleeDash$121 : GenericGenerator<WaitForSeconds>
-	{
-		// Token: 0x06000025 RID: 37 RVA: 0x000038F0 File Offset: 0x00001AF0
-		public $MeleeDash$121(AIfriend self_)
-		{
-			this.$self_$123 = self_;
-		}
-
-		// Token: 0x06000026 RID: 38 RVA: 0x00003900 File Offset: 0x00001B00
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
-		{
-			return new AIfriend.$MeleeDash$121.$(this.$self_$123);
-		}
-
-		// Token: 0x0400004A RID: 74
-		internal AIfriend $self_$123;
-	}
-
-	// Token: 0x0200000F RID: 15
-	[CompilerGenerated]
-	[Serializable]
-	internal sealed class $KnockBack$124 : GenericGenerator<WaitForSeconds>
-	{
-		// Token: 0x06000029 RID: 41 RVA: 0x0000397C File Offset: 0x00001B7C
-		public $KnockBack$124(AIfriend self_)
-		{
-			this.$self_$126 = self_;
-		}
-
-		// Token: 0x0600002A RID: 42 RVA: 0x0000398C File Offset: 0x00001B8C
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
-		{
-			return new AIfriend.$KnockBack$124.$(this.$self_$126);
-		}
-
-		// Token: 0x0400004C RID: 76
-		internal AIfriend $self_$126;
 	}
 }
