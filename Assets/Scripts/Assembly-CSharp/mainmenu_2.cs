@@ -5,8 +5,8 @@ using Heyzap;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
-// Token: 0x020001EC RID: 492
-public class mainmenu : MonoBehaviour
+// Token: 0x020001EC RID: 492S
+public class mainmenu_2 : MonoBehaviour
 {
 	// Token: 0x06000CB6 RID: 3254 RVA: 0x000502DC File Offset: 0x0004E6DC
 	private void Start()
