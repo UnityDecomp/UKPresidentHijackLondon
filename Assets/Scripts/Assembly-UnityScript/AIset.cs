@@ -1,4 +1,5 @@
-﻿
+﻿using Boo.Lang;
+using Boo.Lang.Runtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ public class AIset : MonoBehaviour
 {
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024KnockBack_0024127
+	internal sealed class _0024KnockBack_0024127 : GenericGenerator<WaitForSeconds>
 	{
 		internal AIset _0024self__0024129;
 
@@ -22,7 +23,7 @@ public class AIset : MonoBehaviour
 			_0024self__0024129 = self_;
 		}
 
-		public IEnumerator<WaitForSeconds> GetEnumerator()
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024129);
 		}
@@ -30,7 +31,7 @@ public class AIset : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024Attack_0024130
+	internal sealed class _0024Attack_0024130 : GenericGenerator<WaitForSeconds>
 	{
 		internal AIset _0024self__0024133;
 
@@ -39,7 +40,7 @@ public class AIset : MonoBehaviour
 			_0024self__0024133 = self_;
 		}
 
-		public IEnumerator<WaitForSeconds> GetEnumerator()
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024133);
 		}
@@ -47,7 +48,7 @@ public class AIset : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024UseSkill_0024134
+	internal sealed class _0024UseSkill_0024134 : GenericGenerator<WaitForSeconds>
 	{
 		internal Transform _0024skill_0024142;
 
@@ -71,7 +72,7 @@ public class AIset : MonoBehaviour
 			_0024self__0024147 = self_;
 		}
 
-		public IEnumerator<WaitForSeconds> GetEnumerator()
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024skill_0024142, _0024castTime_0024143, _0024delay_0024144, _0024anim_0024145, _0024dist_0024146, _0024self__0024147);
 		}
@@ -153,7 +154,7 @@ public class AIset : MonoBehaviour
 		knock = Vector3.zero;
 	}
 
-	public void Start()
+	public override void Start()
 	{
 		gameObject.tag = "Enemy";
 		if (!attackPoint)
@@ -180,7 +181,7 @@ public class AIset : MonoBehaviour
 		}
 	}
 
-	public Vector3 GetDestination()
+	public override Vector3 GetDestination()
 	{
 		Vector3 position = followTarget.position;
 		Vector3 position2 = transform.position;
@@ -188,7 +189,7 @@ public class AIset : MonoBehaviour
 		return position;
 	}
 
-	public void Update()
+	public override void Update()
 	{
 		Status status = (Status)GetComponent(typeof(Status));
 		CharacterController characterController = (CharacterController)GetComponent(typeof(CharacterController));
@@ -293,7 +294,7 @@ public class AIset : MonoBehaviour
 		}
 	}
 
-	public void Flinch(Vector3 dir)
+	public override void Flinch(Vector3 dir)
 	{
 		if (!stability)
 		{
@@ -321,17 +322,17 @@ public class AIset : MonoBehaviour
 		}
 	}
 
-	public IEnumerator KnockBack()
+	public override IEnumerator KnockBack()
 	{
 		return new _0024KnockBack_0024127(this).GetEnumerator();
 	}
 
-	public IEnumerator Attack()
+	public override IEnumerator Attack()
 	{
 		return new _0024Attack_0024130(this).GetEnumerator();
 	}
 
-	public void CheckDistance()
+	public override void CheckDistance()
 	{
 		if (!followTarget)
 		{
@@ -369,7 +370,7 @@ public class AIset : MonoBehaviour
 		}
 	}
 
-	public void FindClosest()
+	public override void FindClosest()
 	{
 		gos = GameObject.FindGameObjectsWithTag("Player");
 		gos = (GameObject[])RuntimeServices.AddArrays(typeof(GameObject), gos, GameObject.FindGameObjectsWithTag("Ally"));
@@ -394,7 +395,7 @@ public class AIset : MonoBehaviour
 		}
 	}
 
-	public void FindClosestEnemy()
+	public override void FindClosestEnemy()
 	{
 		float num = float.PositiveInfinity;
 		float radius = detectRange;
@@ -415,12 +416,12 @@ public class AIset : MonoBehaviour
 		}
 	}
 
-	public IEnumerator UseSkill(Transform skill, float castTime, float delay, string anim, float dist)
+	public override IEnumerator UseSkill(Transform skill, float castTime, float delay, string anim, float dist)
 	{
 		return new _0024UseSkill_0024134(skill, castTime, delay, anim, dist, this).GetEnumerator();
 	}
 
-	public void Main()
+	public override void Main()
 	{
 	}
 }

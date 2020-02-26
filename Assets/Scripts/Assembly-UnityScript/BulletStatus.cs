@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-
+using UnityScript.Lang;
 
 // Token: 0x0200002A RID: 42
 [Serializable]

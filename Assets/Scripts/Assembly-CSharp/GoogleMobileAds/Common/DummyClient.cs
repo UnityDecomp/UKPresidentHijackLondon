@@ -18,49 +18,49 @@ namespace GoogleMobileAds.Common
 		// Token: 0x14000035 RID: 53
 		// (add) Token: 0x060001DA RID: 474 RVA: 0x00007E30 File Offset: 0x00006230
 		// (remove) Token: 0x060001DB RID: 475 RVA: 0x00007E68 File Offset: 0x00006268
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<EventArgs> OnAdLoaded;
 
 		// Token: 0x14000036 RID: 54
 		// (add) Token: 0x060001DC RID: 476 RVA: 0x00007EA0 File Offset: 0x000062A0
 		// (remove) Token: 0x060001DD RID: 477 RVA: 0x00007ED8 File Offset: 0x000062D8
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<AdFailedToLoadEventArgs> OnAdFailedToLoad;
 
 		// Token: 0x14000037 RID: 55
 		// (add) Token: 0x060001DE RID: 478 RVA: 0x00007F10 File Offset: 0x00006310
 		// (remove) Token: 0x060001DF RID: 479 RVA: 0x00007F48 File Offset: 0x00006348
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<EventArgs> OnAdOpening;
 
 		// Token: 0x14000038 RID: 56
 		// (add) Token: 0x060001E0 RID: 480 RVA: 0x00007F80 File Offset: 0x00006380
 		// (remove) Token: 0x060001E1 RID: 481 RVA: 0x00007FB8 File Offset: 0x000063B8
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<EventArgs> OnAdStarted;
 
 		// Token: 0x14000039 RID: 57
 		// (add) Token: 0x060001E2 RID: 482 RVA: 0x00007FF0 File Offset: 0x000063F0
 		// (remove) Token: 0x060001E3 RID: 483 RVA: 0x00008028 File Offset: 0x00006428
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<EventArgs> OnAdClosed;
 
 		// Token: 0x1400003A RID: 58
 		// (add) Token: 0x060001E4 RID: 484 RVA: 0x00008060 File Offset: 0x00006460
 		// (remove) Token: 0x060001E5 RID: 485 RVA: 0x00008098 File Offset: 0x00006498
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<Reward> OnAdRewarded;
 
 		// Token: 0x1400003B RID: 59
 		// (add) Token: 0x060001E6 RID: 486 RVA: 0x000080D0 File Offset: 0x000064D0
 		// (remove) Token: 0x060001E7 RID: 487 RVA: 0x00008108 File Offset: 0x00006508
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<EventArgs> OnAdLeavingApplication;
 
 		// Token: 0x1400003C RID: 60
 		// (add) Token: 0x060001E8 RID: 488 RVA: 0x00008140 File Offset: 0x00006540
 		// (remove) Token: 0x060001E9 RID: 489 RVA: 0x00008178 File Offset: 0x00006578
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<CustomNativeEventArgs> OnCustomNativeTemplateAdLoaded;
 
 		// Token: 0x17000029 RID: 41

@@ -9,13 +9,13 @@ public class EasyJoystick : MonoBehaviour
 	// Token: 0x1400006D RID: 109
 	// (add) Token: 0x06000580 RID: 1408 RVA: 0x00028818 File Offset: 0x00026C18
 	// (remove) Token: 0x06000581 RID: 1409 RVA: 0x0002884C File Offset: 0x00026C4C
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyJoystick.JoystickMoveHandler On_JoystickMove;
 
 	// Token: 0x1400006E RID: 110
 	// (add) Token: 0x06000582 RID: 1410 RVA: 0x00028880 File Offset: 0x00026C80
 	// (remove) Token: 0x06000583 RID: 1411 RVA: 0x000288B4 File Offset: 0x00026CB4
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyJoystick.JoystickMoveEndHandler On_JoystickMoveEnd;
 
 	// Token: 0x1700002C RID: 44

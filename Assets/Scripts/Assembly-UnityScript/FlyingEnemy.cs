@@ -1,4 +1,4 @@
-﻿
+﻿using Boo.Lang;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ public class FlyingEnemy : MonoBehaviour
 {
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024Landing_0024179 
+	internal sealed class _0024Landing_0024179 : GenericGenerator<WaitForSeconds>
 	{
 		internal FlyingEnemy _0024self__0024181;
 
@@ -20,7 +20,7 @@ public class FlyingEnemy : MonoBehaviour
 			_0024self__0024181 = self_;
 		}
 
-		public  IEnumerator<WaitForSeconds> GetEnumerator()
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024181);
 		}
@@ -69,7 +69,7 @@ public class FlyingEnemy : MonoBehaviour
 		landingDelay = 0.4f;
 	}
 
-	public  void Start()
+	public override void Start()
 	{
 		ai = (AIset)GetComponent(typeof(AIset));
 		mainModel = ((AIset)GetComponent(typeof(AIset))).mainModel;
@@ -89,7 +89,7 @@ public class FlyingEnemy : MonoBehaviour
 		}
 	}
 
-	public  Vector3 GetDestination()
+	public override Vector3 GetDestination()
 	{
 		Vector3 position = target.position;
 		Vector3 position2 = transform.position;
@@ -97,7 +97,7 @@ public class FlyingEnemy : MonoBehaviour
 		return position;
 	}
 
-	public  void Update()
+	public override void Update()
 	{
 		if (!target && (bool)((AIset)GetComponent(typeof(AIset))).followTarget)
 		{
@@ -154,13 +154,13 @@ public class FlyingEnemy : MonoBehaviour
 		}
 	}
 
-	public  void FlyDown()
+	public override void FlyDown()
 	{
 		ai.freeze = true;
 		flying = 1;
 	}
 
-	public  void FlyUp()
+	public override void FlyUp()
 	{
 		onGround = false;
 		((CharacterMotor)GetComponent(typeof(CharacterMotor))).enabled = false;
@@ -170,7 +170,7 @@ public class FlyingEnemy : MonoBehaviour
 		flying = 2;
 	}
 
-	public  void OnControllerColliderHit(ControllerColliderHit hit)
+	public override void OnControllerColliderHit(ControllerColliderHit hit)
 	{
 		if (flying == 1)
 		{
@@ -178,12 +178,12 @@ public class FlyingEnemy : MonoBehaviour
 		}
 	}
 
-	public  IEnumerator Landing()
+	public override IEnumerator Landing()
 	{
 		return new _0024Landing_0024179(this).GetEnumerator();
 	}
 
-	public  void Main()
+	public override void Main()
 	{
 	}
 }

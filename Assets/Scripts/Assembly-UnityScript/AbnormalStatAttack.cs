@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-
+using UnityScript.Lang;
 
 // Token: 0x02000003 RID: 3
 [RequireComponent(typeof(BulletStatus))]

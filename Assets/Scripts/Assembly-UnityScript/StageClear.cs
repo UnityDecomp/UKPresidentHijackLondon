@@ -1,4 +1,4 @@
-﻿
+﻿using Boo.Lang;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ public class StageClear : MonoBehaviour
 {
     [Serializable]
     [CompilerGenerated]
-    internal sealed class _0024Start_0024176 
+    internal sealed class _0024Start_0024176 : GenericGenerator<WaitForSeconds>
     {
         internal StageClear _0024self__0024178;
 
@@ -19,7 +19,7 @@ public class StageClear : MonoBehaviour
             _0024self__0024178 = self_;
         }
 
-        public IEnumerator<WaitForSeconds> GetEnumerator()
+        public override IEnumerator<WaitForSeconds> GetEnumerator()
         {
             return new _0024(_0024self__0024178);
         }
@@ -42,12 +42,12 @@ public class StageClear : MonoBehaviour
         text = "Text Here";
     }
 
-    public IEnumerator Start()
+    public override IEnumerator Start()
     {
         return new _0024Start_0024176(this).GetEnumerator();
     }
 
-    public void OnGUI()
+    public override void OnGUI()
     {
         if (show)
         {
@@ -55,7 +55,7 @@ public class StageClear : MonoBehaviour
         }
     }
 
-    public void Main()
+    public override void Main()
     {
     }
 }

@@ -24,211 +24,211 @@ public class EasyTouch : MonoBehaviour
 	// Token: 0x1400006F RID: 111
 	// (add) Token: 0x060005AD RID: 1453 RVA: 0x00029A4C File Offset: 0x00027E4C
 	// (remove) Token: 0x060005AE RID: 1454 RVA: 0x00029A80 File Offset: 0x00027E80
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.TouchCancelHandler On_Cancel;
 
 	// Token: 0x14000070 RID: 112
 	// (add) Token: 0x060005AF RID: 1455 RVA: 0x00029AB4 File Offset: 0x00027EB4
 	// (remove) Token: 0x060005B0 RID: 1456 RVA: 0x00029AE8 File Offset: 0x00027EE8
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.Cancel2FingersHandler On_Cancel2Fingers;
 
 	// Token: 0x14000071 RID: 113
 	// (add) Token: 0x060005B1 RID: 1457 RVA: 0x00029B1C File Offset: 0x00027F1C
 	// (remove) Token: 0x060005B2 RID: 1458 RVA: 0x00029B50 File Offset: 0x00027F50
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.TouchStartHandler On_TouchStart;
 
 	// Token: 0x14000072 RID: 114
 	// (add) Token: 0x060005B3 RID: 1459 RVA: 0x00029B84 File Offset: 0x00027F84
 	// (remove) Token: 0x060005B4 RID: 1460 RVA: 0x00029BB8 File Offset: 0x00027FB8
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.TouchDownHandler On_TouchDown;
 
 	// Token: 0x14000073 RID: 115
 	// (add) Token: 0x060005B5 RID: 1461 RVA: 0x00029BEC File Offset: 0x00027FEC
 	// (remove) Token: 0x060005B6 RID: 1462 RVA: 0x00029C20 File Offset: 0x00028020
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.TouchUpHandler On_TouchUp;
 
 	// Token: 0x14000074 RID: 116
 	// (add) Token: 0x060005B7 RID: 1463 RVA: 0x00029C54 File Offset: 0x00028054
 	// (remove) Token: 0x060005B8 RID: 1464 RVA: 0x00029C88 File Offset: 0x00028088
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.SimpleTapHandler On_SimpleTap;
 
 	// Token: 0x14000075 RID: 117
 	// (add) Token: 0x060005B9 RID: 1465 RVA: 0x00029CBC File Offset: 0x000280BC
 	// (remove) Token: 0x060005BA RID: 1466 RVA: 0x00029CF0 File Offset: 0x000280F0
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.DoubleTapHandler On_DoubleTap;
 
 	// Token: 0x14000076 RID: 118
 	// (add) Token: 0x060005BB RID: 1467 RVA: 0x00029D24 File Offset: 0x00028124
 	// (remove) Token: 0x060005BC RID: 1468 RVA: 0x00029D58 File Offset: 0x00028158
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.LongTapStartHandler On_LongTapStart;
 
 	// Token: 0x14000077 RID: 119
 	// (add) Token: 0x060005BD RID: 1469 RVA: 0x00029D8C File Offset: 0x0002818C
 	// (remove) Token: 0x060005BE RID: 1470 RVA: 0x00029DC0 File Offset: 0x000281C0
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.LongTapHandler On_LongTap;
 
 	// Token: 0x14000078 RID: 120
 	// (add) Token: 0x060005BF RID: 1471 RVA: 0x00029DF4 File Offset: 0x000281F4
 	// (remove) Token: 0x060005C0 RID: 1472 RVA: 0x00029E28 File Offset: 0x00028228
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.LongTapEndHandler On_LongTapEnd;
 
 	// Token: 0x14000079 RID: 121
 	// (add) Token: 0x060005C1 RID: 1473 RVA: 0x00029E5C File Offset: 0x0002825C
 	// (remove) Token: 0x060005C2 RID: 1474 RVA: 0x00029E90 File Offset: 0x00028290
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.DragStartHandler On_DragStart;
 
 	// Token: 0x1400007A RID: 122
 	// (add) Token: 0x060005C3 RID: 1475 RVA: 0x00029EC4 File Offset: 0x000282C4
 	// (remove) Token: 0x060005C4 RID: 1476 RVA: 0x00029EF8 File Offset: 0x000282F8
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.DragHandler On_Drag;
 
 	// Token: 0x1400007B RID: 123
 	// (add) Token: 0x060005C5 RID: 1477 RVA: 0x00029F2C File Offset: 0x0002832C
 	// (remove) Token: 0x060005C6 RID: 1478 RVA: 0x00029F60 File Offset: 0x00028360
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.DragEndHandler On_DragEnd;
 
 	// Token: 0x1400007C RID: 124
 	// (add) Token: 0x060005C7 RID: 1479 RVA: 0x00029F94 File Offset: 0x00028394
 	// (remove) Token: 0x060005C8 RID: 1480 RVA: 0x00029FC8 File Offset: 0x000283C8
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.SwipeStartHandler On_SwipeStart;
 
 	// Token: 0x1400007D RID: 125
 	// (add) Token: 0x060005C9 RID: 1481 RVA: 0x00029FFC File Offset: 0x000283FC
 	// (remove) Token: 0x060005CA RID: 1482 RVA: 0x0002A030 File Offset: 0x00028430
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.SwipeHandler On_Swipe;
 
 	// Token: 0x1400007E RID: 126
 	// (add) Token: 0x060005CB RID: 1483 RVA: 0x0002A064 File Offset: 0x00028464
 	// (remove) Token: 0x060005CC RID: 1484 RVA: 0x0002A098 File Offset: 0x00028498
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.SwipeEndHandler On_SwipeEnd;
 
 	// Token: 0x1400007F RID: 127
 	// (add) Token: 0x060005CD RID: 1485 RVA: 0x0002A0CC File Offset: 0x000284CC
 	// (remove) Token: 0x060005CE RID: 1486 RVA: 0x0002A100 File Offset: 0x00028500
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.TouchStart2FingersHandler On_TouchStart2Fingers;
 
 	// Token: 0x14000080 RID: 128
 	// (add) Token: 0x060005CF RID: 1487 RVA: 0x0002A134 File Offset: 0x00028534
 	// (remove) Token: 0x060005D0 RID: 1488 RVA: 0x0002A168 File Offset: 0x00028568
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.TouchDown2FingersHandler On_TouchDown2Fingers;
 
 	// Token: 0x14000081 RID: 129
 	// (add) Token: 0x060005D1 RID: 1489 RVA: 0x0002A19C File Offset: 0x0002859C
 	// (remove) Token: 0x060005D2 RID: 1490 RVA: 0x0002A1D0 File Offset: 0x000285D0
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.TouchUp2FingersHandler On_TouchUp2Fingers;
 
 	// Token: 0x14000082 RID: 130
 	// (add) Token: 0x060005D3 RID: 1491 RVA: 0x0002A204 File Offset: 0x00028604
 	// (remove) Token: 0x060005D4 RID: 1492 RVA: 0x0002A238 File Offset: 0x00028638
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.SimpleTap2FingersHandler On_SimpleTap2Fingers;
 
 	// Token: 0x14000083 RID: 131
 	// (add) Token: 0x060005D5 RID: 1493 RVA: 0x0002A26C File Offset: 0x0002866C
 	// (remove) Token: 0x060005D6 RID: 1494 RVA: 0x0002A2A0 File Offset: 0x000286A0
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.DoubleTap2FingersHandler On_DoubleTap2Fingers;
 
 	// Token: 0x14000084 RID: 132
 	// (add) Token: 0x060005D7 RID: 1495 RVA: 0x0002A2D4 File Offset: 0x000286D4
 	// (remove) Token: 0x060005D8 RID: 1496 RVA: 0x0002A308 File Offset: 0x00028708
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.LongTapStart2FingersHandler On_LongTapStart2Fingers;
 
 	// Token: 0x14000085 RID: 133
 	// (add) Token: 0x060005D9 RID: 1497 RVA: 0x0002A33C File Offset: 0x0002873C
 	// (remove) Token: 0x060005DA RID: 1498 RVA: 0x0002A370 File Offset: 0x00028770
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.LongTap2FingersHandler On_LongTap2Fingers;
 
 	// Token: 0x14000086 RID: 134
 	// (add) Token: 0x060005DB RID: 1499 RVA: 0x0002A3A4 File Offset: 0x000287A4
 	// (remove) Token: 0x060005DC RID: 1500 RVA: 0x0002A3D8 File Offset: 0x000287D8
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.LongTapEnd2FingersHandler On_LongTapEnd2Fingers;
 
 	// Token: 0x14000087 RID: 135
 	// (add) Token: 0x060005DD RID: 1501 RVA: 0x0002A40C File Offset: 0x0002880C
 	// (remove) Token: 0x060005DE RID: 1502 RVA: 0x0002A440 File Offset: 0x00028840
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.TwistHandler On_Twist;
 
 	// Token: 0x14000088 RID: 136
 	// (add) Token: 0x060005DF RID: 1503 RVA: 0x0002A474 File Offset: 0x00028874
 	// (remove) Token: 0x060005E0 RID: 1504 RVA: 0x0002A4A8 File Offset: 0x000288A8
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.TwistEndHandler On_TwistEnd;
 
 	// Token: 0x14000089 RID: 137
 	// (add) Token: 0x060005E1 RID: 1505 RVA: 0x0002A4DC File Offset: 0x000288DC
 	// (remove) Token: 0x060005E2 RID: 1506 RVA: 0x0002A510 File Offset: 0x00028910
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.PinchInHandler On_PinchIn;
 
 	// Token: 0x1400008A RID: 138
 	// (add) Token: 0x060005E3 RID: 1507 RVA: 0x0002A544 File Offset: 0x00028944
 	// (remove) Token: 0x060005E4 RID: 1508 RVA: 0x0002A578 File Offset: 0x00028978
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.PinchOutHandler On_PinchOut;
 
 	// Token: 0x1400008B RID: 139
 	// (add) Token: 0x060005E5 RID: 1509 RVA: 0x0002A5AC File Offset: 0x000289AC
 	// (remove) Token: 0x060005E6 RID: 1510 RVA: 0x0002A5E0 File Offset: 0x000289E0
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.PinchEndHandler On_PinchEnd;
 
 	// Token: 0x1400008C RID: 140
 	// (add) Token: 0x060005E7 RID: 1511 RVA: 0x0002A614 File Offset: 0x00028A14
 	// (remove) Token: 0x060005E8 RID: 1512 RVA: 0x0002A648 File Offset: 0x00028A48
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.DragStart2FingersHandler On_DragStart2Fingers;
 
 	// Token: 0x1400008D RID: 141
 	// (add) Token: 0x060005E9 RID: 1513 RVA: 0x0002A67C File Offset: 0x00028A7C
 	// (remove) Token: 0x060005EA RID: 1514 RVA: 0x0002A6B0 File Offset: 0x00028AB0
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.Drag2FingersHandler On_Drag2Fingers;
 
 	// Token: 0x1400008E RID: 142
 	// (add) Token: 0x060005EB RID: 1515 RVA: 0x0002A6E4 File Offset: 0x00028AE4
 	// (remove) Token: 0x060005EC RID: 1516 RVA: 0x0002A718 File Offset: 0x00028B18
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.DragEnd2FingersHandler On_DragEnd2Fingers;
 
 	// Token: 0x1400008F RID: 143
 	// (add) Token: 0x060005ED RID: 1517 RVA: 0x0002A74C File Offset: 0x00028B4C
 	// (remove) Token: 0x060005EE RID: 1518 RVA: 0x0002A780 File Offset: 0x00028B80
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.SwipeStart2FingersHandler On_SwipeStart2Fingers;
 
 	// Token: 0x14000090 RID: 144
 	// (add) Token: 0x060005EF RID: 1519 RVA: 0x0002A7B4 File Offset: 0x00028BB4
 	// (remove) Token: 0x060005F0 RID: 1520 RVA: 0x0002A7E8 File Offset: 0x00028BE8
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.Swipe2FingersHandler On_Swipe2Fingers;
 
 	// Token: 0x14000091 RID: 145
 	// (add) Token: 0x060005F1 RID: 1521 RVA: 0x0002A81C File Offset: 0x00028C1C
 	// (remove) Token: 0x060005F2 RID: 1522 RVA: 0x0002A850 File Offset: 0x00028C50
-	
+	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public static event EasyTouch.SwipeEnd2FingersHandler On_SwipeEnd2Fingers;
 
 	// Token: 0x060005F3 RID: 1523 RVA: 0x0002A884 File Offset: 0x00028C84

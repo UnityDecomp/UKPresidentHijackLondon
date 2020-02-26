@@ -1,4 +1,4 @@
-﻿
+﻿using Boo.Lang;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ public class Underwater : MonoBehaviour
 {
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024ActivateWaterController_0024283
+	internal sealed class _0024ActivateWaterController_0024283 : GenericGenerator<WaitForSeconds>
 	{
 		internal Underwater _0024self__0024285;
 
@@ -19,7 +19,7 @@ public class Underwater : MonoBehaviour
 			_0024self__0024285 = self_;
 		}
 
-		public  IEnumerator<WaitForSeconds> GetEnumerator()
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024285);
 		}
@@ -27,7 +27,7 @@ public class Underwater : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024ActivateGroundController_0024286
+	internal sealed class _0024ActivateGroundController_0024286 : GenericGenerator<WaitForSeconds>
 	{
 		internal Underwater _0024self__0024288;
 
@@ -36,7 +36,7 @@ public class Underwater : MonoBehaviour
 			_0024self__0024288 = self_;
 		}
 
-		public  IEnumerator<WaitForSeconds> GetEnumerator()
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024288);
 		}
@@ -96,7 +96,7 @@ public class Underwater : MonoBehaviour
 		cannotAttack = true;
 	}
 
-	public  void Start()
+	public override void Start()
 	{
 		if (!mainCam)
 		{
@@ -116,7 +116,7 @@ public class Underwater : MonoBehaviour
 		}
 	}
 
-	public  void Update()
+	public override void Update()
 	{
 		if (!mainCam)
 		{
@@ -179,17 +179,17 @@ public class Underwater : MonoBehaviour
 		}
 	}
 
-	public  IEnumerator ActivateWaterController()
+	public override IEnumerator ActivateWaterController()
 	{
 		return new _0024ActivateWaterController_0024283(this).GetEnumerator();
 	}
 
-	public  IEnumerator ActivateGroundController()
+	public override IEnumerator ActivateGroundController()
 	{
 		return new _0024ActivateGroundController_0024286(this).GetEnumerator();
 	}
 
-	public  void Main()
+	public override void Main()
 	{
 	}
 }

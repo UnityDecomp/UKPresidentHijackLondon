@@ -1,10 +1,11 @@
 ﻿using System;
 
 // Token: 0x0200003F RID: 63
-public class _TextDialogue
+[Serializable]
+public class TextDialogue
 {
 	// Token: 0x060000BA RID: 186 RVA: 0x00009AC0 File Offset: 0x00007CC0
-	public void TextDialogue()
+	public TextDialogue()
 	{
 		this.textLine1 = string.Empty;
 		this.textLine2 = string.Empty;

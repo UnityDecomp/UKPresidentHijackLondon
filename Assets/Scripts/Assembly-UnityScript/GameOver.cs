@@ -1,17 +1,17 @@
-﻿
+﻿using Boo.Lang;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-
+using UnityScript.Lang;
 
 [Serializable]
 public class GameOver : MonoBehaviour
 {
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024Start_0024182
+	internal sealed class _0024Start_0024182 : GenericGenerator<WaitForSeconds>
 	{
 		internal GameOver _0024self__0024184;
 
@@ -20,7 +20,7 @@ public class GameOver : MonoBehaviour
 			_0024self__0024184 = self_;
 		}
 
-		public IEnumerator<WaitForSeconds> GetEnumerator()
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024184);
 		}
@@ -43,12 +43,12 @@ public class GameOver : MonoBehaviour
 		delay = 3f;
 	}
 
-	public IEnumerator Start()
+	public override IEnumerator Start()
 	{
 		return new _0024Start_0024182(this).GetEnumerator();
 	}
 
-	public void OnGUI()
+	public override void OnGUI()
 	{
 		if (menu)
 		{
@@ -66,7 +66,7 @@ public class GameOver : MonoBehaviour
 		}
 	}
 
-	public void LoadData()
+	public override void LoadData()
 	{
 		oldPlayer = GameObject.FindWithTag("Player");
 		if ((bool)oldPlayer)
@@ -175,7 +175,7 @@ public class GameOver : MonoBehaviour
 		UnityEngine.Object.Destroy(this.gameObject);
 	}
 
-	public void Main()
+	public override void Main()
 	{
 	}
 }

@@ -1,4 +1,4 @@
-﻿
+﻿using Boo.Lang;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ public class QuestClient : MonoBehaviour
 {
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024AcceptQuest_0024205 
+	internal sealed class _0024AcceptQuest_0024205 : GenericGenerator<WaitForSeconds>
 	{
 		internal QuestClient _0024self__0024208;
 
@@ -19,7 +19,7 @@ public class QuestClient : MonoBehaviour
 			_0024self__0024208 = self_;
 		}
 
-		public IEnumerator<WaitForSeconds> GetEnumerator()
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024208);
 		}
@@ -88,7 +88,7 @@ public class QuestClient : MonoBehaviour
 		sendMsgWhenTakeQuest = string.Empty;
 	}
 
-	public void Update()
+	public override void Update()
 	{
 		if (Input.GetKeyDown("e") && enter && thisActive && !showError)
 		{
@@ -96,7 +96,7 @@ public class QuestClient : MonoBehaviour
 		}
 	}
 
-	public void NextPage()
+	public override void NextPage()
 	{
 		int num = ((QuestStat)player.GetComponent(typeof(QuestStat))).CheckQuestProgress(questId);
 		int num2 = ((QuestData)questData.GetComponent(typeof(QuestData))).questData[questId].finishProgress;
@@ -147,7 +147,7 @@ public class QuestClient : MonoBehaviour
 		}
 	}
 
-	public void TakeQuest()
+	public override void TakeQuest()
 	{
 		if (s > textLength)
 		{
@@ -161,7 +161,7 @@ public class QuestClient : MonoBehaviour
 		}
 	}
 
-	public void TalkOnly()
+	public override void TalkOnly()
 	{
 		if (s > textLength)
 		{
@@ -174,7 +174,7 @@ public class QuestClient : MonoBehaviour
 		}
 	}
 
-	public void FinishQuest()
+	public override void FinishQuest()
 	{
 		if (s > textLength)
 		{
@@ -191,12 +191,12 @@ public class QuestClient : MonoBehaviour
 		}
 	}
 
-	public IEnumerator AcceptQuest()
+	public override IEnumerator AcceptQuest()
 	{
 		return new _0024AcceptQuest_0024205(this).GetEnumerator();
 	}
 
-	public void CheckQuestCondition()
+	public override void CheckQuestCondition()
 	{
 		QuestData questData = (QuestData)this.questData.GetComponent(typeof(QuestData));
 		int num = ((QuestStat)player.GetComponent(typeof(QuestStat))).CheckQuestProgress(questId);
@@ -206,7 +206,7 @@ public class QuestClient : MonoBehaviour
 		}
 	}
 
-	public void OnGUI()
+	public override void OnGUI()
 	{
 		if (!player)
 		{
@@ -236,7 +236,7 @@ public class QuestClient : MonoBehaviour
 		}
 	}
 
-	public void OnTriggerEnter(Collider other)
+	public override void OnTriggerEnter(Collider other)
 	{
 		if (trigger && other.tag == "Player")
 		{
@@ -248,7 +248,7 @@ public class QuestClient : MonoBehaviour
 		}
 	}
 
-	public void OnTriggerExit(Collider other)
+	public override void OnTriggerExit(Collider other)
 	{
 		if (trigger)
 		{
@@ -263,7 +263,7 @@ public class QuestClient : MonoBehaviour
 		}
 	}
 
-	public void Talking()
+	public override void Talking()
 	{
 		if (enter)
 		{
@@ -273,7 +273,7 @@ public class QuestClient : MonoBehaviour
 		}
 	}
 
-	public void CloseTalk()
+	public override void CloseTalk()
 	{
 		showGui = false;
 		Time.timeScale = 1f;
@@ -281,7 +281,7 @@ public class QuestClient : MonoBehaviour
 		s = 0;
 	}
 
-	public bool ActivateQuest(GameObject p)
+	public override bool ActivateQuest(GameObject p)
 	{
 		player = p;
 		acceptQuest = ((QuestStat)player.GetComponent(typeof(QuestStat))).CheckQuestSlot(questId);
@@ -291,7 +291,7 @@ public class QuestClient : MonoBehaviour
 		return questFinish;
 	}
 
-	public void Main()
+	public override void Main()
 	{
 	}
 }

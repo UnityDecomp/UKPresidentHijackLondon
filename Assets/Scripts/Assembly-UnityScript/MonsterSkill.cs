@@ -1,4 +1,4 @@
-﻿
+﻿using Boo.Lang;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ public class MonsterSkill : MonoBehaviour
 {
     [Serializable]
     [CompilerGenerated]
-    internal sealed class _0024Start_0024188
+    internal sealed class _0024Start_0024188 : GenericGenerator<WaitForSeconds>
     {
         internal MonsterSkill _0024self__0024190;
 
@@ -20,7 +20,7 @@ public class MonsterSkill : MonoBehaviour
             _0024self__0024190 = self_;
         }
 
-        public  IEnumerator<WaitForSeconds> GetEnumerator()
+        public override IEnumerator<WaitForSeconds> GetEnumerator()
         {
             return new _0024(_0024self__0024190);
         }
@@ -28,7 +28,7 @@ public class MonsterSkill : MonoBehaviour
 
     [Serializable]
     [CompilerGenerated]
-    internal sealed class _0024UseSkill_0024191
+    internal sealed class _0024UseSkill_0024191 : GenericGenerator<WaitForSeconds>
     {
         internal MonsterSkill _0024self__0024196;
 
@@ -37,7 +37,7 @@ public class MonsterSkill : MonoBehaviour
             _0024self__0024196 = self_;
         }
 
-        public IEnumerator<WaitForSeconds> GetEnumerator()
+        public override IEnumerator<WaitForSeconds> GetEnumerator()
         {
             return new _0024(_0024self__0024196);
         }
@@ -64,12 +64,12 @@ public class MonsterSkill : MonoBehaviour
         skillSet = new SkillSetting[1];
     }
 
-    public  IEnumerator Start()
+    public override IEnumerator Start()
     {
         return new _0024Start_0024188(this).GetEnumerator();
     }
 
-    public  void Update()
+    public override void Update()
     {
         if (begin && !onSkill)
         {
@@ -85,12 +85,12 @@ public class MonsterSkill : MonoBehaviour
         }
     }
 
-    public  IEnumerator UseSkill()
+    public override IEnumerator UseSkill()
     {
         return new _0024UseSkill_0024191(this).GetEnumerator();
     }
 
-    public  void Main()
+    public override void Main()
     {
     }
 }

@@ -10,25 +10,25 @@ namespace admob
 		// Token: 0x14000001 RID: 1
 		// (add) Token: 0x06000002 RID: 2 RVA: 0x00002058 File Offset: 0x00000258
 		// (remove) Token: 0x06000003 RID: 3 RVA: 0x00002090 File Offset: 0x00000290
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event Admob.AdmobEventHandler bannerEventHandler;
 
 		// Token: 0x14000002 RID: 2
 		// (add) Token: 0x06000004 RID: 4 RVA: 0x000020C8 File Offset: 0x000002C8
 		// (remove) Token: 0x06000005 RID: 5 RVA: 0x00002100 File Offset: 0x00000300
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event Admob.AdmobEventHandler interstitialEventHandler;
 
 		// Token: 0x14000003 RID: 3
 		// (add) Token: 0x06000006 RID: 6 RVA: 0x00002138 File Offset: 0x00000338
 		// (remove) Token: 0x06000007 RID: 7 RVA: 0x00002170 File Offset: 0x00000370
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event Admob.AdmobEventHandler rewardedVideoEventHandler;
 
 		// Token: 0x14000004 RID: 4
 		// (add) Token: 0x06000008 RID: 8 RVA: 0x000021A8 File Offset: 0x000003A8
 		// (remove) Token: 0x06000009 RID: 9 RVA: 0x000021E0 File Offset: 0x000003E0
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event Admob.AdmobEventHandler nativeBannerEventHandler;
 
 		// Token: 0x0600000A RID: 10 RVA: 0x00002216 File Offset: 0x00000416

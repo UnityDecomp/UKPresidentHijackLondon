@@ -3,7 +3,7 @@
 namespace DG.Tweening
 {
 	// Token: 0x0200000A RID: 10
-	public enum _Ease
+	public enum Ease
 	{
 		// Token: 0x04000027 RID: 39
 		Unset,

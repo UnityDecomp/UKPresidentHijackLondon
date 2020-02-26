@@ -3,7 +3,7 @@
 namespace DG.Tweening
 {
 	// Token: 0x02000012 RID: 18
-	public enum _LoopType
+	public enum LoopType
 	{
 		// Token: 0x04000062 RID: 98
 		Restart,

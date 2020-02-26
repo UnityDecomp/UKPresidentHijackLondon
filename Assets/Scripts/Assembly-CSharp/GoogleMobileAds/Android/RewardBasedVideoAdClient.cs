@@ -24,7 +24,7 @@ namespace GoogleMobileAds.Android
 		// Token: 0x14000066 RID: 102
 		// (add) Token: 0x060002AC RID: 684 RVA: 0x000095BC File Offset: 0x000079BC
 		// (remove) Token: 0x060002AD RID: 685 RVA: 0x000095F4 File Offset: 0x000079F4
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<EventArgs> OnAdLoaded = delegate(object A_0, EventArgs A_1)
 		{
 		};
@@ -32,7 +32,7 @@ namespace GoogleMobileAds.Android
 		// Token: 0x14000067 RID: 103
 		// (add) Token: 0x060002AE RID: 686 RVA: 0x0000962C File Offset: 0x00007A2C
 		// (remove) Token: 0x060002AF RID: 687 RVA: 0x00009664 File Offset: 0x00007A64
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<AdFailedToLoadEventArgs> OnAdFailedToLoad = delegate(object A_0, AdFailedToLoadEventArgs A_1)
 		{
 		};
@@ -40,7 +40,7 @@ namespace GoogleMobileAds.Android
 		// Token: 0x14000068 RID: 104
 		// (add) Token: 0x060002B0 RID: 688 RVA: 0x0000969C File Offset: 0x00007A9C
 		// (remove) Token: 0x060002B1 RID: 689 RVA: 0x000096D4 File Offset: 0x00007AD4
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<EventArgs> OnAdOpening = delegate(object A_0, EventArgs A_1)
 		{
 		};
@@ -48,7 +48,7 @@ namespace GoogleMobileAds.Android
 		// Token: 0x14000069 RID: 105
 		// (add) Token: 0x060002B2 RID: 690 RVA: 0x0000970C File Offset: 0x00007B0C
 		// (remove) Token: 0x060002B3 RID: 691 RVA: 0x00009744 File Offset: 0x00007B44
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<EventArgs> OnAdStarted = delegate(object A_0, EventArgs A_1)
 		{
 		};
@@ -56,7 +56,7 @@ namespace GoogleMobileAds.Android
 		// Token: 0x1400006A RID: 106
 		// (add) Token: 0x060002B4 RID: 692 RVA: 0x0000977C File Offset: 0x00007B7C
 		// (remove) Token: 0x060002B5 RID: 693 RVA: 0x000097B4 File Offset: 0x00007BB4
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<EventArgs> OnAdClosed = delegate(object A_0, EventArgs A_1)
 		{
 		};
@@ -64,7 +64,7 @@ namespace GoogleMobileAds.Android
 		// Token: 0x1400006B RID: 107
 		// (add) Token: 0x060002B6 RID: 694 RVA: 0x000097EC File Offset: 0x00007BEC
 		// (remove) Token: 0x060002B7 RID: 695 RVA: 0x00009824 File Offset: 0x00007C24
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<Reward> OnAdRewarded = delegate(object A_0, Reward A_1)
 		{
 		};
@@ -72,7 +72,7 @@ namespace GoogleMobileAds.Android
 		// Token: 0x1400006C RID: 108
 		// (add) Token: 0x060002B8 RID: 696 RVA: 0x0000985C File Offset: 0x00007C5C
 		// (remove) Token: 0x060002B9 RID: 697 RVA: 0x00009894 File Offset: 0x00007C94
-		
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public event EventHandler<EventArgs> OnAdLeavingApplication = delegate(object A_0, EventArgs A_1)
 		{
 		};

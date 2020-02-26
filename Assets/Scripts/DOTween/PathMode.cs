@@ -3,7 +3,7 @@
 namespace DG.Tweening
 {
 	// Token: 0x0200000D RID: 13
-	public enum _PathMode
+	public enum PathMode
 	{
 		// Token: 0x0400004E RID: 78
 		Ignore,

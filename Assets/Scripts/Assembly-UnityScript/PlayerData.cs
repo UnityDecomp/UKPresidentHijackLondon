@@ -2,10 +2,11 @@
 using UnityEngine;
 
 // Token: 0x0200002B RID: 43
-public class _PlayerData
+[Serializable]
+public class PlayerData
 {
 	// Token: 0x06000074 RID: 116 RVA: 0x00006B9C File Offset: 0x00004D9C
-	public void PlayerData()
+	public PlayerData()
 	{
 		this.playerName = string.Empty;
 	}

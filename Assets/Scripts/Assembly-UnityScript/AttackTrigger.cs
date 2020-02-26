@@ -1,10 +1,10 @@
-﻿
+﻿using Boo.Lang;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-
+using UnityScript.Lang;
 
 [Serializable]
 [RequireComponent(typeof(QuestStat))]
@@ -20,7 +20,7 @@ public class AttackTrigger : MonoBehaviour
 {
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024AttackCombo_0024148
+	internal sealed class _0024AttackCombo_0024148 : GenericGenerator<WaitForSeconds>
 	{
 		internal AttackTrigger _0024self__0024153;
 
@@ -29,7 +29,7 @@ public class AttackTrigger : MonoBehaviour
 			_0024self__0024153 = self_;
 		}
 
-		public  IEnumerator<WaitForSeconds> GetEnumerator()
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024153);
 		}
@@ -37,7 +37,7 @@ public class AttackTrigger : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024MeleeDash_0024154
+	internal sealed class _0024MeleeDash_0024154 : GenericGenerator<WaitForSeconds>
 	{
 		internal AttackTrigger _0024self__0024156;
 
@@ -46,7 +46,7 @@ public class AttackTrigger : MonoBehaviour
 			_0024self__0024156 = self_;
 		}
 
-		public  IEnumerator<WaitForSeconds> GetEnumerator()
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024156);
 		}
@@ -54,7 +54,7 @@ public class AttackTrigger : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024MagicSkill_0024157
+	internal sealed class _0024MagicSkill_0024157 : GenericGenerator<WaitForSeconds>
 	{
 		internal int _0024skillID_0024163;
 
@@ -66,7 +66,7 @@ public class AttackTrigger : MonoBehaviour
 			_0024self__0024164 = self_;
 		}
 
-		public  IEnumerator<WaitForSeconds> GetEnumerator()
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024skillID_0024163, _0024self__0024164);
 		}
@@ -74,7 +74,7 @@ public class AttackTrigger : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024KnockBack_0024165
+	internal sealed class _0024KnockBack_0024165 : GenericGenerator<WaitForSeconds>
 	{
 		internal AttackTrigger _0024self__0024167;
 
@@ -83,7 +83,7 @@ public class AttackTrigger : MonoBehaviour
 			_0024self__0024167 = self_;
 		}
 
-		public  IEnumerator<WaitForSeconds> GetEnumerator()
+		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024167);
 		}
@@ -187,7 +187,7 @@ public class AttackTrigger : MonoBehaviour
 		knock = Vector3.zero;
 	}
 
-	public  void Awake()
+	public override void Awake()
 	{
 		this.gameObject.tag = "Player";
 		if (!Maincam)
@@ -262,7 +262,7 @@ public class AttackTrigger : MonoBehaviour
 		}
 	}
 
-	public  void Update()
+	public override void Update()
 	{
 		Status status = (Status)GetComponent(typeof(Status));
 		if (freeze || atkDelay || Time.timeScale == 0f || status.freeze)
@@ -319,7 +319,7 @@ public class AttackTrigger : MonoBehaviour
 		}
 	}
 
-	public  void OnGUI()
+	public override void OnGUI()
 	{
 		if (aimingType == AimType.Normal)
 		{
@@ -347,22 +347,22 @@ public class AttackTrigger : MonoBehaviour
 		}
 	}
 
-	public  IEnumerator AttackCombo()
+	public override IEnumerator AttackCombo()
 	{
 		return new _0024AttackCombo_0024148(this).GetEnumerator();
 	}
 
-	public  IEnumerator MeleeDash()
+	public override IEnumerator MeleeDash()
 	{
 		return new _0024MeleeDash_0024154(this).GetEnumerator();
 	}
 
-	public  IEnumerator MagicSkill(int skillID)
+	public override IEnumerator MagicSkill(int skillID)
 	{
 		return new _0024MagicSkill_0024157(skillID, this).GetEnumerator();
 	}
 
-	public  void Flinch(Vector3 dir)
+	public override void Flinch(Vector3 dir)
 	{
 		knock = dir;
 		if ((bool)sound.hurtVoice && ((Status)GetComponent(typeof(Status))).health >= 1)
@@ -379,12 +379,12 @@ public class AttackTrigger : MonoBehaviour
 		((CharacterMotor)GetComponent(typeof(CharacterMotor))).canControl = true;
 	}
 
-	public  IEnumerator KnockBack()
+	public override IEnumerator KnockBack()
 	{
 		return new _0024KnockBack_0024165(this).GetEnumerator();
 	}
 
-	public  void Aiming()
+	public override void Aiming()
 	{
 		Ray ray = Maincam.GetComponent<Camera>().ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
 		RaycastHit hitInfo = default(RaycastHit);
@@ -398,7 +398,7 @@ public class AttackTrigger : MonoBehaviour
 		}
 	}
 
-	public  void Main()
+	public override void Main()
 	{
 	}
 }
