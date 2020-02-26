@@ -1,4 +1,4 @@
-﻿using Boo.Lang;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ public class AIfriend : MonoBehaviour
 {
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024Attack_0024114 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024Attack_0024114
 	{
 		internal AIfriend _0024self__0024120;
 
@@ -22,7 +22,7 @@ public class AIfriend : MonoBehaviour
 			_0024self__0024120 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public  IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024120);
 		}
@@ -30,7 +30,7 @@ public class AIfriend : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024MeleeDash_0024121 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024MeleeDash_0024121
 	{
 		internal AIfriend _0024self__0024123;
 
@@ -39,7 +39,7 @@ public class AIfriend : MonoBehaviour
 			_0024self__0024123 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public  IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024123);
 		}
@@ -47,7 +47,7 @@ public class AIfriend : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024KnockBack_0024124 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024KnockBack_0024124
 	{
 		internal AIfriend _0024self__0024126;
 
@@ -56,7 +56,7 @@ public class AIfriend : MonoBehaviour
 			_0024self__0024126 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public  IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024126);
 		}
@@ -141,7 +141,7 @@ public class AIfriend : MonoBehaviour
 		attackVoice = new AudioClip[3];
 	}
 
-	public override void Start()
+	public  void Start()
 	{
 		gameObject.tag = "Ally";
 		if (!mainModel)
@@ -184,7 +184,7 @@ public class AIfriend : MonoBehaviour
 		}
 	}
 
-	public override Vector3 GetDestination()
+	public  Vector3 GetDestination()
 	{
 		Vector3 position = followTarget.position;
 		Vector3 position2 = transform.position;
@@ -192,7 +192,7 @@ public class AIfriend : MonoBehaviour
 		return position;
 	}
 
-	public override Vector3 GetMasterPosition()
+	public  Vector3 GetMasterPosition()
 	{
 		Vector3 result;
 		if ((bool)master)
@@ -210,7 +210,7 @@ public class AIfriend : MonoBehaviour
 		return result;
 	}
 
-	public override void Update()
+	public  void Update()
 	{
 		CharacterController characterController = (CharacterController)GetComponent(typeof(CharacterController));
 		Status status = (Status)GetComponent(typeof(Status));
@@ -395,12 +395,12 @@ public class AIfriend : MonoBehaviour
 		}
 	}
 
-	public override IEnumerator Attack()
+	public  IEnumerator Attack()
 	{
 		return new _0024Attack_0024114(this).GetEnumerator();
 	}
 
-	public override void CheckDistance()
+	public  void CheckDistance()
 	{
 		masterDistance = (transform.position - GetMasterPosition()).magnitude;
 		if (!(masterDistance <= detectRange + 5f))
@@ -452,7 +452,7 @@ public class AIfriend : MonoBehaviour
 		}
 	}
 
-	public override GameObject FindClosest()
+	public  GameObject FindClosest()
 	{
 		GameObject[] array = null;
 		array = GameObject.FindGameObjectsWithTag("Enemy");
@@ -496,12 +496,12 @@ public class AIfriend : MonoBehaviour
 		return (GameObject)result;
 	}
 
-	public override IEnumerator MeleeDash()
+	public  IEnumerator MeleeDash()
 	{
 		return new _0024MeleeDash_0024121(this).GetEnumerator();
 	}
 
-	public override void Flinch(Vector3 dir)
+	public  void Flinch(Vector3 dir)
 	{
 		if (!stability)
 		{
@@ -528,12 +528,12 @@ public class AIfriend : MonoBehaviour
 		}
 	}
 
-	public override IEnumerator KnockBack()
+	public  IEnumerator KnockBack()
 	{
 		return new _0024KnockBack_0024124(this).GetEnumerator();
 	}
 
-	public override void Main()
+	public  void Main()
 	{
 	}
 }

@@ -1,6 +1,6 @@
 namespace DG.Tweening
 {
-	public enum AutoPlay
+	public enum _AutoPlay
 	{
 		None = 0,
 		AutoPlaySequences = 1,

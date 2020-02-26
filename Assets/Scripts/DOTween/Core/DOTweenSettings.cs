@@ -4,7 +4,7 @@ using UnityEngine;
 namespace DG.Tweening.Core
 {
 	// Token: 0x02000049 RID: 73
-	public class DOTweenSettings : ScriptableObject
+	public class _DOTweenSettings : ScriptableObject
 	{
 		// Token: 0x0400011C RID: 284
 		public const string AssetName = "DOTweenSettings";

@@ -1,17 +1,17 @@
-using Boo.Lang;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityScript.Lang;
+
 
 [Serializable]
 public class Status : MonoBehaviour
 {
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024OnPoison_0024222 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024OnPoison_0024222
 	{
 		internal int _0024hurtTime_0024229;
 
@@ -23,7 +23,7 @@ public class Status : MonoBehaviour
 			_0024self__0024230 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024hurtTime_0024229, _0024self__0024230);
 		}
@@ -31,7 +31,7 @@ public class Status : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024OnSilence_0024231 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024OnSilence_0024231
 	{
 		internal float _0024dur_0024237;
 
@@ -43,7 +43,7 @@ public class Status : MonoBehaviour
 			_0024self__0024238 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024dur_0024237, _0024self__0024238);
 		}
@@ -51,7 +51,7 @@ public class Status : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024OnWebbedUp_0024239 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024OnWebbedUp_0024239
 	{
 		internal float _0024dur_0024245;
 
@@ -63,7 +63,7 @@ public class Status : MonoBehaviour
 			_0024self__0024246 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024dur_0024245, _0024self__0024246);
 		}
@@ -71,7 +71,7 @@ public class Status : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024OnStun_0024247 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024OnStun_0024247
 	{
 		internal float _0024dur_0024253;
 
@@ -83,7 +83,7 @@ public class Status : MonoBehaviour
 			_0024self__0024254 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024dur_0024253, _0024self__0024254);
 		}
@@ -91,7 +91,7 @@ public class Status : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024OnBarrier_0024255 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024OnBarrier_0024255
 	{
 		internal float _0024amount_0024259;
 
@@ -106,7 +106,7 @@ public class Status : MonoBehaviour
 			_0024self__0024261 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024amount_0024259, _0024dur_0024260, _0024self__0024261);
 		}
@@ -114,7 +114,7 @@ public class Status : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024OnMagicBarrier_0024262 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024OnMagicBarrier_0024262
 	{
 		internal float _0024amount_0024266;
 
@@ -129,7 +129,7 @@ public class Status : MonoBehaviour
 			_0024self__0024268 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024amount_0024266, _0024dur_0024267, _0024self__0024268);
 		}
@@ -137,7 +137,7 @@ public class Status : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024OnBrave_0024269 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024OnBrave_0024269
 	{
 		internal float _0024amount_0024273;
 
@@ -152,7 +152,7 @@ public class Status : MonoBehaviour
 			_0024self__0024275 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024amount_0024273, _0024dur_0024274, _0024self__0024275);
 		}
@@ -160,7 +160,7 @@ public class Status : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024OnFaith_0024276 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024OnFaith_0024276
 	{
 		internal float _0024amount_0024280;
 
@@ -175,7 +175,7 @@ public class Status : MonoBehaviour
 			_0024self__0024282 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024amount_0024280, _0024dur_0024281, _0024self__0024282);
 		}
@@ -317,7 +317,7 @@ public class Status : MonoBehaviour
 		elementEffective = new elem[5];
 	}
 
-	public override string OnDamage(int amount, int element)
+	public string OnDamage(int amount, int element)
 	{
 		object result;
 		if (!dead)
@@ -355,7 +355,7 @@ public class Status : MonoBehaviour
 		return (string)result;
 	}
 
-	public override string OnMagicDamage(int amount, int element)
+	public string OnMagicDamage(int amount, int element)
 	{
 		object result;
 		if (!dead)
@@ -393,7 +393,7 @@ public class Status : MonoBehaviour
 		return (string)result;
 	}
 
-	public override void Heal(int hp, int mp)
+	public void Heal(int hp, int mp)
 	{
 		health += hp;
 		if (health >= maxHealth)
@@ -407,7 +407,7 @@ public class Status : MonoBehaviour
 		}
 	}
 
-	public override void Death()
+	public void Death()
 	{
 		if (gameObject.tag == "Player")
 		{
@@ -424,7 +424,7 @@ public class Status : MonoBehaviour
 		}
 	}
 
-	public override void gainEXP(int gain)
+	public void gainEXP(int gain)
 	{
 		exp += gain;
 		if (exp >= maxExp)
@@ -434,7 +434,7 @@ public class Status : MonoBehaviour
 		}
 	}
 
-	public override void LevelUp(int remainingEXP)
+	public void LevelUp(int remainingEXP)
 	{
 		exp = 0;
 		exp += remainingEXP;
@@ -452,7 +452,7 @@ public class Status : MonoBehaviour
 		}
 	}
 
-	public override void SaveData()
+	public void SaveData()
 	{
 		PlayerPrefs.SetString("TempName", characterName);
 		PlayerPrefs.SetInt("TempID", characterId);
@@ -519,7 +519,7 @@ public class Status : MonoBehaviour
 		MonoBehaviour.print("Saved");
 	}
 
-	public override void CalculateStatus()
+	public void CalculateStatus()
 	{
 		addAtk = 0;
 		addAtk += atk + buffAtk + weaponAtk;
@@ -539,27 +539,27 @@ public class Status : MonoBehaviour
 		}
 	}
 
-	public override IEnumerator OnPoison(int hurtTime)
+	public IEnumerator OnPoison(int hurtTime)
 	{
 		return new _0024OnPoison_0024222(hurtTime, this).GetEnumerator();
 	}
 
-	public override IEnumerator OnSilence(float dur)
+	public IEnumerator OnSilence(float dur)
 	{
 		return new _0024OnSilence_0024231(dur, this).GetEnumerator();
 	}
 
-	public override IEnumerator OnWebbedUp(float dur)
+	public IEnumerator OnWebbedUp(float dur)
 	{
 		return new _0024OnWebbedUp_0024239(dur, this).GetEnumerator();
 	}
 
-	public override IEnumerator OnStun(float dur)
+	public IEnumerator OnStun(float dur)
 	{
 		return new _0024OnStun_0024247(dur, this).GetEnumerator();
 	}
 
-	public override void ApplyAbnormalStat(int statId, float dur)
+	public void ApplyAbnormalStat(int statId, float dur)
 	{
 		if (statId == 0)
 		{
@@ -579,27 +579,27 @@ public class Status : MonoBehaviour
 		}
 	}
 
-	public override IEnumerator OnBarrier(float amount, float dur)
+	public IEnumerator OnBarrier(float amount, float dur)
 	{
 		return new _0024OnBarrier_0024255(amount, dur, this).GetEnumerator();
 	}
 
-	public override IEnumerator OnMagicBarrier(float amount, float dur)
+	public IEnumerator OnMagicBarrier(float amount, float dur)
 	{
 		return new _0024OnMagicBarrier_0024262(amount, dur, this).GetEnumerator();
 	}
 
-	public override IEnumerator OnBrave(float amount, float dur)
+	public IEnumerator OnBrave(float amount, float dur)
 	{
 		return new _0024OnBrave_0024269(amount, dur, this).GetEnumerator();
 	}
 
-	public override IEnumerator OnFaith(float amount, float dur)
+	public IEnumerator OnFaith(float amount, float dur)
 	{
 		return new _0024OnFaith_0024276(amount, dur, this).GetEnumerator();
 	}
 
-	public override void ApplyBuff(int statId, float dur, int amount)
+	public void ApplyBuff(int statId, float dur, int amount)
 	{
 		if (statId == 1)
 		{
@@ -619,7 +619,7 @@ public class Status : MonoBehaviour
 		}
 	}
 
-	public override void Main()
+	public void Main()
 	{
 	}
 }

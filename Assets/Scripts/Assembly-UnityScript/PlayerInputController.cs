@@ -1,4 +1,4 @@
-﻿using Boo.Lang;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ public class PlayerInputController : MonoBehaviour
 {
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024Dasher_0024197 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024Dasher_0024197 
 	{
 		internal PlayerInputController _0024self__0024199;
 
@@ -20,7 +20,7 @@ public class PlayerInputController : MonoBehaviour
 			_0024self__0024199 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024self__0024199);
 		}
@@ -28,7 +28,7 @@ public class PlayerInputController : MonoBehaviour
 
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024DodgeRoll_0024200 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024DodgeRoll_0024200 
 	{
 		internal AnimationClip _0024anim_0024203;
 
@@ -40,7 +40,7 @@ public class PlayerInputController : MonoBehaviour
 			_0024self__0024204 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024anim_0024203, _0024self__0024204);
 		}
@@ -100,7 +100,7 @@ public class PlayerInputController : MonoBehaviour
 		useMecanim = true;
 	}
 
-	public override void Start()
+	public void Start()
 	{
 		motor = (CharacterMotor)GetComponent(typeof(CharacterMotor));
 		controller = (CharacterController)GetComponent(typeof(CharacterController));
@@ -112,7 +112,7 @@ public class PlayerInputController : MonoBehaviour
 		useMecanim = ((AttackTrigger)GetComponent(typeof(AttackTrigger))).useMecanim;
 	}
 
-	public override void Update()
+	public void Update()
 	{
 		Status status = (Status)GetComponent(typeof(Status));
 		if (status.freeze)
@@ -229,7 +229,7 @@ public class PlayerInputController : MonoBehaviour
 		}
 	}
 
-	public override void OnGUI()
+	public void OnGUI()
 	{
 		if (sprint || recover || dodging)
 		{
@@ -239,12 +239,12 @@ public class PlayerInputController : MonoBehaviour
 		}
 	}
 
-	public override IEnumerator Dasher()
+	public IEnumerator Dasher()
 	{
 		return new _0024Dasher_0024197(this).GetEnumerator();
 	}
 
-	public override void StaminaRecovery()
+	public void StaminaRecovery()
 	{
 		stamina += 1f;
 		if (!(stamina < maxStamina))
@@ -259,12 +259,12 @@ public class PlayerInputController : MonoBehaviour
 		}
 	}
 
-	public override IEnumerator DodgeRoll(AnimationClip anim)
+	public IEnumerator DodgeRoll(AnimationClip anim)
 	{
 		return new _0024DodgeRoll_0024200(anim, this).GetEnumerator();
 	}
 
-	public override void Main()
+	public void Main()
 	{
 	}
 }

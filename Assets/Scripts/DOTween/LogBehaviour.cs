@@ -3,7 +3,7 @@
 namespace DG.Tweening
 {
 	// Token: 0x02000017 RID: 23
-	public enum LogBehaviour
+	public enum _LogBehaviour
 	{
 		// Token: 0x04000081 RID: 129
 		Default,

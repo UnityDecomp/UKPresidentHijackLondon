@@ -44,13 +44,13 @@ namespace GoogleMobileAds.Android
 		// Token: 0x14000055 RID: 85
 		// (add) Token: 0x06000256 RID: 598 RVA: 0x000085C0 File Offset: 0x000069C0
 		// (remove) Token: 0x06000257 RID: 599 RVA: 0x000085F8 File Offset: 0x000069F8
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public event EventHandler<AdFailedToLoadEventArgs> OnAdFailedToLoad;
 
 		// Token: 0x14000056 RID: 86
 		// (add) Token: 0x06000258 RID: 600 RVA: 0x00008630 File Offset: 0x00006A30
 		// (remove) Token: 0x06000259 RID: 601 RVA: 0x00008668 File Offset: 0x00006A68
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public event EventHandler<CustomNativeEventArgs> OnCustomNativeTemplateAdLoaded;
 
 		// Token: 0x0600025A RID: 602 RVA: 0x0000869E File Offset: 0x00006A9E

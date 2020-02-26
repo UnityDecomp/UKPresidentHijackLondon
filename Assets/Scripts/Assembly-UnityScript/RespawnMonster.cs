@@ -1,4 +1,4 @@
-﻿using Boo.Lang;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ public class RespawnMonster : MonoBehaviour
 {
     [Serializable]
     [CompilerGenerated]
-    internal sealed class _0024Start_0024209 : GenericGenerator<WaitForSeconds>
+    internal sealed class _0024Start_0024209 
     {
         internal RespawnMonster _0024self__0024215;
 
@@ -19,7 +19,7 @@ public class RespawnMonster : MonoBehaviour
             _0024self__0024215 = self_;
         }
 
-        public override IEnumerator<WaitForSeconds> GetEnumerator()
+        public  IEnumerator<WaitForSeconds> GetEnumerator()
         {
             return new _0024(_0024self__0024215);
         }
@@ -40,12 +40,12 @@ public class RespawnMonster : MonoBehaviour
         randomPoint = 10f;
     }
 
-    public override IEnumerator Start()
+    public  IEnumerator Start()
     {
         return new _0024Start_0024209(this).GetEnumerator();
     }
 
-    public override void Main()
+    public  void Main()
     {
     }
 }

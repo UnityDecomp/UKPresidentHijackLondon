@@ -1,4 +1,4 @@
-﻿using Boo.Lang;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ public class CharacterMotor : MonoBehaviour
 {
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024SubtractNewPlatformVelocity_0024168 : GenericGenerator<object>
+	internal sealed class _0024SubtractNewPlatformVelocity_0024168
 	{
 		internal CharacterMotor _0024self__0024171;
 
@@ -21,7 +21,7 @@ public class CharacterMotor : MonoBehaviour
 			_0024self__0024171 = self_;
 		}
 
-		public override IEnumerator<object> GetEnumerator()
+		public  IEnumerator<object> GetEnumerator()
 		{
 			return new _0024(_0024self__0024171);
 		}
@@ -71,7 +71,7 @@ public class CharacterMotor : MonoBehaviour
 		lastGroundNormal = Vector3.zero;
 	}
 
-	public override void Awake()
+	public  void Awake()
 	{
 		controller = (CharacterController)GetComponent(typeof(CharacterController));
 		tr = transform;
@@ -171,7 +171,7 @@ public class CharacterMotor : MonoBehaviour
 		}
 	}
 
-	public override void FixedUpdate()
+	public  void FixedUpdate()
 	{
 		if (movingPlatform.enabled)
 		{
@@ -196,7 +196,7 @@ public class CharacterMotor : MonoBehaviour
 		}
 	}
 
-	public override void Update()
+	public  void Update()
 	{
 		if (!useFixedUpdate)
 		{
@@ -310,7 +310,7 @@ public class CharacterMotor : MonoBehaviour
 		return velocity;
 	}
 
-	public override void OnControllerColliderHit(ControllerColliderHit hit)
+	public  void OnControllerColliderHit(ControllerColliderHit hit)
 	{
 		Vector3 normal = hit.normal;
 		if (normal.y <= 0f)
@@ -386,22 +386,22 @@ public class CharacterMotor : MonoBehaviour
 		return groundNormal.y > 0.01f;
 	}
 
-	public override float GetMaxAcceleration(bool grounded)
+	public  float GetMaxAcceleration(bool grounded)
 	{
 		return (!grounded) ? movement.maxAirAcceleration : movement.maxGroundAcceleration;
 	}
 
-	public override float CalculateJumpVerticalSpeed(float targetJumpHeight)
+	public  float CalculateJumpVerticalSpeed(float targetJumpHeight)
 	{
 		return Mathf.Sqrt(2f * targetJumpHeight * movement.gravity);
 	}
 
-	public override bool IsJumping()
+	public  bool IsJumping()
 	{
 		return jumping.jumping;
 	}
 
-	public override bool IsSliding()
+	public  bool IsSliding()
 	{
 		bool num = grounded;
 		if (num)
@@ -415,32 +415,32 @@ public class CharacterMotor : MonoBehaviour
 		return num;
 	}
 
-	public override bool IsTouchingCeiling()
+	public  bool IsTouchingCeiling()
 	{
 		return (movement.collisionFlags & CollisionFlags.Above) != 0;
 	}
 
-	public override bool IsGrounded()
+	public  bool IsGrounded()
 	{
 		return grounded;
 	}
 
-	public override bool TooSteep()
+	public  bool TooSteep()
 	{
 		return !(groundNormal.y > Mathf.Cos(controller.slopeLimit * ((float)Math.PI / 180f)));
 	}
 
-	public override Vector3 GetDirection()
+	public  Vector3 GetDirection()
 	{
 		return inputMoveDirection;
 	}
 
-	public override void SetControllable(bool controllable)
+	public  void SetControllable(bool controllable)
 	{
 		canControl = controllable;
 	}
 
-	public override float MaxSpeedInDirection(Vector3 desiredMovementDirection)
+	public  float MaxSpeedInDirection(Vector3 desiredMovementDirection)
 	{
 		float result;
 		if (desiredMovementDirection == Vector3.zero)
@@ -457,7 +457,7 @@ public class CharacterMotor : MonoBehaviour
 		return result;
 	}
 
-	public override void SetVelocity(Vector3 velocity)
+	public  void SetVelocity(Vector3 velocity)
 	{
 		grounded = false;
 		movement.velocity = velocity;
@@ -465,7 +465,7 @@ public class CharacterMotor : MonoBehaviour
 		SendMessage("OnExternalVelocity");
 	}
 
-	public override void Main()
+	public  void Main()
 	{
 	}
 }

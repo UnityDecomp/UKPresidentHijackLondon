@@ -1,4 +1,4 @@
-﻿using Boo.Lang;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ public class SkillWindow : MonoBehaviour
 {
 	[Serializable]
 	[CompilerGenerated]
-	internal sealed class _0024ShowLearnedSkill_0024216 : GenericGenerator<WaitForSeconds>
+	internal sealed class _0024ShowLearnedSkill_0024216
 	{
 		internal int _0024id_0024220;
 
@@ -22,7 +22,7 @@ public class SkillWindow : MonoBehaviour
 			_0024self__0024221 = self_;
 		}
 
-		public override IEnumerator<WaitForSeconds> GetEnumerator()
+		public IEnumerator<WaitForSeconds> GetEnumerator()
 		{
 			return new _0024(_0024id_0024220, _0024self__0024221);
 		}
@@ -80,7 +80,7 @@ public class SkillWindow : MonoBehaviour
 		pageMultiply = 8;
 	}
 
-	public override void Start()
+	public void Start()
 	{
 		if (!player)
 		{
@@ -93,7 +93,7 @@ public class SkillWindow : MonoBehaviour
 		}
 	}
 
-	public override void Update()
+	public void Update()
 	{
 		if (Input.GetKeyDown("k"))
 		{
@@ -101,7 +101,7 @@ public class SkillWindow : MonoBehaviour
 		}
 	}
 
-	public override void OnOffMenu()
+	public void OnOffMenu()
 	{
 		if (!menu && Time.timeScale != 0f)
 		{
@@ -121,7 +121,7 @@ public class SkillWindow : MonoBehaviour
 		}
 	}
 
-	public override void OnGUI()
+	public void OnGUI()
 	{
 		SkillData skillData = (SkillData)database.GetComponent(typeof(SkillData));
 		if (showSkillLearned)
@@ -138,7 +138,7 @@ public class SkillWindow : MonoBehaviour
 		}
 	}
 
-	public override void AssignSkill(int id, int sk)
+	public void AssignSkill(int id, int sk)
 	{
 		SkillData skillData = (SkillData)database.GetComponent(typeof(SkillData));
 		((AttackTrigger)player.GetComponent(typeof(AttackTrigger))).manaCost[id] = skillData.skill[skillListSlot[sk]].manaCost;
@@ -149,7 +149,7 @@ public class SkillWindow : MonoBehaviour
 		MonoBehaviour.print(sk);
 	}
 
-	public override void AssignAllSkill()
+	public void AssignAllSkill()
 	{
 		if (!player)
 		{
@@ -166,7 +166,7 @@ public class SkillWindow : MonoBehaviour
 		}
 	}
 
-	public override void SkillShortcut(int windowID)
+	public void SkillShortcut(int windowID)
 	{
 		SkillData skillData = (SkillData)database.GetComponent(typeof(SkillData));
 		windowRect.width = 360f;
@@ -199,7 +199,7 @@ public class SkillWindow : MonoBehaviour
 		GUI.DragWindow(new Rect(0f, 0f, 10000f, 10000f));
 	}
 
-	public override void AllSkill(int windowID)
+	public void AllSkill(int windowID)
 	{
 		SkillData skillData = (SkillData)database.GetComponent(typeof(SkillData));
 		windowRect.width = 300f;
@@ -284,7 +284,7 @@ public class SkillWindow : MonoBehaviour
 		GUI.DragWindow(new Rect(0f, 0f, 10000f, 10000f));
 	}
 
-	public override void AddSkill(int id)
+	public void AddSkill(int id)
 	{
 		bool flag = false;
 		int num = 0;
@@ -307,12 +307,12 @@ public class SkillWindow : MonoBehaviour
 		}
 	}
 
-	public override IEnumerator ShowLearnedSkill(int id)
+	public IEnumerator ShowLearnedSkill(int id)
 	{
 		return new _0024ShowLearnedSkill_0024216(id, this).GetEnumerator();
 	}
 
-	public override void ResetPosition()
+	public void ResetPosition()
 	{
 		if (windowRect.x >= (float)(Screen.width - 30) || windowRect.y >= (float)(Screen.height - 30) || windowRect.x <= -70f || !(windowRect.y > -70f))
 		{
@@ -320,7 +320,7 @@ public class SkillWindow : MonoBehaviour
 		}
 	}
 
-	public override void LearnSkillByLevel(int lv)
+	public void LearnSkillByLevel(int lv)
 	{
 		for (int i = 0; i < learnSkill.Length; i++)
 		{
@@ -331,7 +331,7 @@ public class SkillWindow : MonoBehaviour
 		}
 	}
 
-	public override void Main()
+	public void Main()
 	{
 	}
 }

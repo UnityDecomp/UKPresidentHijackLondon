@@ -1,4 +1,4 @@
-﻿using Boo.Lang;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ public class DamagePopup : MonoBehaviour
 {
     [Serializable]
     [CompilerGenerated]
-    internal sealed class _0024Start_0024172 : GenericGenerator<WaitForSeconds>
+    internal sealed class _0024Start_0024172 
     {
         internal DamagePopup _0024self__0024175;
 
@@ -19,7 +19,7 @@ public class DamagePopup : MonoBehaviour
             _0024self__0024175 = self_;
         }
 
-        public override IEnumerator<WaitForSeconds> GetEnumerator()
+        public IEnumerator<WaitForSeconds> GetEnumerator()
         {
             return new _0024(_0024self__0024175);
         }
@@ -42,12 +42,12 @@ public class DamagePopup : MonoBehaviour
         glide = 50;
     }
 
-    public override IEnumerator Start()
+    public IEnumerator Start()
     {
         return new _0024Start_0024172(this).GetEnumerator();
     }
 
-    public override void OnGUI()
+    public void OnGUI()
     {
         targetScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
         targetScreenPosition.y = (float)Screen.height - targetScreenPosition.y - (float)glide;
@@ -58,7 +58,7 @@ public class DamagePopup : MonoBehaviour
         }
     }
 
-    public override void Main()
+    public void Main()
     {
     }
 }

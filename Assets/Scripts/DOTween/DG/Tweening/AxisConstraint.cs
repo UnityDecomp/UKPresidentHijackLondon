@@ -1,6 +1,6 @@
 namespace DG.Tweening
 {
-	public enum AxisConstraint
+	public enum _AxisConstraint
 	{
 		None = 0,
 		X = 2,

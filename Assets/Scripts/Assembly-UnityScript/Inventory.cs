@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using UnityScript.Lang;
+
 
 // Token: 0x02000054 RID: 84
 [Serializable]
