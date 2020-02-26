@@ -21,7 +21,7 @@ public class MinimapCamera : MonoBehaviour
 
         public override IEnumerator<WaitForSeconds> GetEnumerator()
         {
-            return new _0024Start_0024185(_0024self__0024187);
+            return new _0024Start_0024185(_0024self__0024187).GetEnumerator();
         }
     }
 

@@ -22,7 +22,7 @@ public class PlayerInputController : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024(_0024self__0024199);
+			return new _0024Dasher_0024197(_0024self__0024199).GetEnumerator();
 		}
 	}
 
@@ -42,7 +42,7 @@ public class PlayerInputController : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024DodgeRoll_0024200(_0024anim_0024203, _0024self__0024204);
+			return new _0024DodgeRoll_0024200(_0024anim_0024203, _0024self__0024204).GetEnumerator();
 		}
 	}
 

@@ -21,7 +21,7 @@ public class DamagePopup : MonoBehaviour
 
         public override IEnumerator<WaitForSeconds> GetEnumerator()
         {
-            return new _0024Start_0024172(_0024self__0024175);
+            return new _0024Start_0024172(_0024self__0024175).GetEnumerator();
         }
     }
 

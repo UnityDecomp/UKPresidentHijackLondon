@@ -24,7 +24,7 @@ public class AIfriend : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024Attack_0024114(_0024self__0024120);
+			return new _0024Attack_0024114(_0024self__0024120).GetEnumerator();
 		}
 	}
 
@@ -41,7 +41,7 @@ public class AIfriend : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024MeleeDash_0024121(_0024self__0024123);
+			return new _0024MeleeDash_0024121(_0024self__0024123).GetEnumerator();
 		}
 	}
 
@@ -58,7 +58,7 @@ public class AIfriend : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024KnockBack_0024124(_0024self__0024126);
+			return new _0024KnockBack_0024124(_0024self__0024126).GetEnumerator();
 		}
 	}
 

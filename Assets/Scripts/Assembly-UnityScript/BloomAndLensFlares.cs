@@ -63,7 +63,7 @@ public class BloomAndLensFlares : PostEffectsBase
 				bool flag;
 				if (flag = (source.format == RenderTextureFormat.ARGBHalf))
 				{
-					flag = this.GetComponent<Camera>().hdr;
+					flag = this.GetComponent<Camera>().allowHDR;
 				}
 				this.doHdr = flag;
 			}

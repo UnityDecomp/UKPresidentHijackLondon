@@ -31,7 +31,7 @@ public class AttackTrigger : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024AttackCombo_0024148(_0024self__0024153);
+			return new _0024AttackCombo_0024148(_0024self__0024153).GetEnumerator();
 		}
 	}
 
@@ -48,7 +48,7 @@ public class AttackTrigger : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024MeleeDash_0024154(_0024self__0024156);
+			return new _0024MeleeDash_0024154(_0024self__0024156).GetEnumerator();
 		}
 	}
 
@@ -68,7 +68,7 @@ public class AttackTrigger : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024MagicSkill_0024157(_0024skillID_0024163, _0024self__0024164);
+			return new _0024MagicSkill_0024157(_0024skillID_0024163, _0024self__0024164).GetEnumerator();
 		}
 	}
 
@@ -85,7 +85,7 @@ public class AttackTrigger : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024KnockBack_0024165(_0024self__0024167);
+			return new _0024KnockBack_0024165(_0024self__0024167).GetEnumerator();
 		}
 	}
 

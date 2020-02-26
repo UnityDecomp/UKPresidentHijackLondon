@@ -23,7 +23,8 @@ namespace UnityStandardAssets.Utility
 			Debug.Log("stopping " + base.name);
 			foreach (ParticleSystem particleSystem2 in systems)
 			{
-				particleSystem2.emission.enabled = false;
+				ParticleSystem.EmissionModule emission = particleSystem2.emission;
+				emission.enabled = false;
 			}
 			base.BroadcastMessage("Extinguish", SendMessageOptions.DontRequireReceiver);
 			yield return new WaitForSeconds(this.m_MaxLifetime);

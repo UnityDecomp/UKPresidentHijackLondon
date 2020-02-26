@@ -366,7 +366,7 @@ public class Crafting : MonoBehaviour
 	// Token: 0x060000A3 RID: 163 RVA: 0x00009518 File Offset: 0x00007718
 	public virtual void AddandRemoveItem()
 	{
-		bool flag;
+		bool flag = default(bool);
 		if (this.craftingData[this.selection].gotItem.itemType == ItType.Usable)
 		{
 			flag = ((Inventory)this.player.GetComponent(typeof(Inventory))).AddItem(this.craftingData[this.selection].gotItem.itemId, this.craftingData[this.selection].gotItem.quantity);

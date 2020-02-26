@@ -25,7 +25,7 @@ public class Status : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024OnPoison_0024222(_0024hurtTime_0024229, _0024self__0024230);
+			return new _0024OnPoison_0024222(_0024hurtTime_0024229, _0024self__0024230).GetEnumerator();
 		}
 	}
 
@@ -45,7 +45,7 @@ public class Status : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024OnSilence_0024231(_0024dur_0024237, _0024self__0024238);
+			return new _0024OnSilence_0024231(_0024dur_0024237, _0024self__0024238).GetEnumerator();
 		}
 	}
 
@@ -65,7 +65,7 @@ public class Status : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024OnWebbedUp_0024239(_0024dur_0024245, _0024self__0024246);
+			return new _0024OnWebbedUp_0024239(_0024dur_0024245, _0024self__0024246).GetEnumerator();
 		}
 	}
 
@@ -85,7 +85,7 @@ public class Status : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024OnStun_0024247(_0024dur_0024253, _0024self__0024254);
+			return new _0024OnStun_0024247(_0024dur_0024253, _0024self__0024254).GetEnumerator();
 		}
 	}
 
@@ -108,7 +108,7 @@ public class Status : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024OnBarrier_0024255(_0024amount_0024259, _0024dur_0024260, _0024self__0024261);
+			return new _0024OnBarrier_0024255(_0024amount_0024259, _0024dur_0024260, _0024self__0024261).GetEnumerator();
 		}
 	}
 
@@ -131,7 +131,7 @@ public class Status : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024OnMagicBarrier_0024262(_0024amount_0024266, _0024dur_0024267, _0024self__0024268);
+			return new _0024OnMagicBarrier_0024262(_0024amount_0024266, _0024dur_0024267, _0024self__0024268).GetEnumerator();
 		}
 	}
 
@@ -154,7 +154,7 @@ public class Status : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024OnBrave_0024269(_0024amount_0024273, _0024dur_0024274, _0024self__0024275);
+			return new _0024OnBrave_0024269(_0024amount_0024273, _0024dur_0024274, _0024self__0024275).GetEnumerator();
 		}
 	}
 
@@ -177,7 +177,7 @@ public class Status : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024OnFaith_0024276(_0024amount_0024280, _0024dur_0024281, _0024self__0024282);
+			return new _0024OnFaith_0024276(_0024amount_0024280, _0024dur_0024281, _0024self__0024282).GetEnumerator();
 		}
 	}
 

@@ -21,7 +21,7 @@ public class RespawnMonster : MonoBehaviour
 
         public override IEnumerator<WaitForSeconds> GetEnumerator()
         {
-            return new _0024Start_0024209(_0024self__0024215);
+            return new _0024Start_0024209(_0024self__0024215).GetEnumerator();
         }
     }
 

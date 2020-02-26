@@ -22,7 +22,7 @@ public class GameOver : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024Start_0024182(_0024self__0024184);
+			return new _0024Start_0024182(_0024self__0024184).GetEnumerator();
 		}
 	}
 

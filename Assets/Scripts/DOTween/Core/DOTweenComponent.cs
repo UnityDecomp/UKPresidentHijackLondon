@@ -21,7 +21,7 @@ namespace DG.Tweening.Core
 			if (DOTween.instance != this)
 			{
 				this._duplicateToDestroy = true;
-				Object.Destroy(base.gameObject);
+				UnityEngine.Object.Destroy(base.gameObject);
 			}
 		}
 
@@ -200,7 +200,7 @@ namespace DG.Tweening.Core
 				return;
 			}
 			GameObject gameObject = new GameObject("[DOTween]");
-			Object.DontDestroyOnLoad(gameObject);
+			UnityEngine.Object.DontDestroyOnLoad(gameObject);
 			DOTween.instance = gameObject.AddComponent<DOTweenComponent>();
 		}
 
@@ -209,7 +209,7 @@ namespace DG.Tweening.Core
 		{
 			if (DOTween.instance != null)
 			{
-				Object.Destroy(DOTween.instance.gameObject);
+				UnityEngine.Object.Destroy(DOTween.instance.gameObject);
 			}
 			DOTween.instance = null;
 		}

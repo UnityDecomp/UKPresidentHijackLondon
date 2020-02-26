@@ -23,7 +23,7 @@ namespace DG.Tweening.Plugins
 			for (int i = 0; i < num; i++)
 			{
 				char c = chars[i];
-				int num2 = Random.Range(i, num);
+				int num2 = UnityEngine.Random.Range(i, num);
 				chars[i] = chars[num2];
 				chars[num2] = c;
 			}
@@ -38,7 +38,7 @@ namespace DG.Tweening.Plugins
 			}
 			int num = chars.Length;
 			int num2;
-			for (num2 = StringPluginExtensions._lastRndSeed; num2 == StringPluginExtensions._lastRndSeed; num2 = Random.Range(0, num))
+			for (num2 = StringPluginExtensions._lastRndSeed; num2 == StringPluginExtensions._lastRndSeed; num2 = UnityEngine.Random.Range(0, num))
 			{
 			}
 			StringPluginExtensions._lastRndSeed = num2;

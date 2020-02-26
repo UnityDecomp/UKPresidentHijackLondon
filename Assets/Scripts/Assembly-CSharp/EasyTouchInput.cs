@@ -129,7 +129,7 @@ public class EasyTouchInput
 			if (!this.bComplex)
 			{
 				this.bComplex = true;
-				this.deltaFingerPosition = Input.mousePosition - this.oldFinger2Position;
+				this.deltaFingerPosition = (Vector2)Input.mousePosition - this.oldFinger2Position;
 			}
 			result = this.GetComplex2finger();
 			return result;

@@ -21,7 +21,7 @@ public class QuestClient : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024AcceptQuest_0024205(_0024self__0024208);
+			return new _0024AcceptQuest_0024205(_0024self__0024208).GetEnumerator();
 		}
 	}
 

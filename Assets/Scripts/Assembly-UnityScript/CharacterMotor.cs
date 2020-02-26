@@ -23,7 +23,7 @@ public class CharacterMotor : MonoBehaviour
 
 		public override IEnumerator<object> GetEnumerator()
 		{
-			return new _0024SubtractNewPlatformVelocity_0024168(_0024self__0024171);
+			return new _0024SubtractNewPlatformVelocity_0024168(_0024self__0024171).GetEnumerator();
 		}
 	}
 

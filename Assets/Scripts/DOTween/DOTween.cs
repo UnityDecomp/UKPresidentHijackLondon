@@ -370,7 +370,7 @@ namespace DG.Tweening
 			{
 				array[j] *= num7;
 			}
-			float num8 = Random.Range(0f, 360f);
+			float num8 = UnityEngine.Random.Range(0f, 360f);
 			Vector3[] array2 = new Vector3[num2];
 			for (int k = 0; k < num2; k++)
 			{
@@ -378,11 +378,11 @@ namespace DG.Tweening
 				{
 					if (k > 0)
 					{
-						num8 = num8 - 180f + Random.Range(-randomness, randomness);
+						num8 = num8 - 180f + UnityEngine.Random.Range(-randomness, randomness);
 					}
 					if (vectorBased)
 					{
-						Vector3 vector = Quaternion.AngleAxis(Random.Range(-randomness, randomness), Vector3.up) * Utils.Vector3FromAngle(num8, num);
+						Vector3 vector = Quaternion.AngleAxis(UnityEngine.Random.Range(-randomness, randomness), Vector3.up) * Utils.Vector3FromAngle(num8, num);
 						vector.x = Vector3.ClampMagnitude(vector, strength.x).x;
 						vector.y = Vector3.ClampMagnitude(vector, strength.y).y;
 						vector.z = Vector3.ClampMagnitude(vector, strength.z).z;
@@ -398,7 +398,7 @@ namespace DG.Tweening
 						}
 						else
 						{
-							Quaternion rotation = Quaternion.AngleAxis(Random.Range(-randomness, randomness), Vector3.up);
+							Quaternion rotation = Quaternion.AngleAxis(UnityEngine.Random.Range(-randomness, randomness), Vector3.up);
 							array2[k] = rotation * Utils.Vector3FromAngle(num8, num);
 						}
 						num -= num3;

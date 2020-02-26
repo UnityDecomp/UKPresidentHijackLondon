@@ -35,7 +35,7 @@ namespace UnityStandardAssets.ImageEffects
 			this.doHdr = false;
 			if (this.hdr == Bloom.HDRBloomMode.Auto)
 			{
-				this.doHdr = (source.format == RenderTextureFormat.ARGBHalf && base.GetComponent<Camera>().hdr);
+				this.doHdr = (source.format == RenderTextureFormat.ARGBHalf && base.GetComponent<Camera>().allowHDR);
 			}
 			else
 			{

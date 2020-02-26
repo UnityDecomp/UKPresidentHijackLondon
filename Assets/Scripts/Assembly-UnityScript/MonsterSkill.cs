@@ -22,7 +22,7 @@ public class MonsterSkill : MonoBehaviour
 
         public override IEnumerator<WaitForSeconds> GetEnumerator()
         {
-            return new _0024Start_0024188(_0024self__0024190);
+            return new _0024Start_0024188(_0024self__0024190).GetEnumerator();
         }
     }
 
@@ -39,7 +39,7 @@ public class MonsterSkill : MonoBehaviour
 
         public override IEnumerator<WaitForSeconds> GetEnumerator()
         {
-            return new _0024UseSkill_0024191(_0024self__0024196);
+            return new _0024UseSkill_0024191(_0024self__0024196).GetEnumerator();
         }
     }
 

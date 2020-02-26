@@ -45,7 +45,12 @@ public class Vignetting : PostEffectsBase
 		{
 			int width = source.width;
 			int height = source.height;
-			bool flag = (Mathf.Abs(this.blur) > (float)0) ?? (Mathf.Abs(this.intensity) > (float)0);
+			bool _num = Mathf.Abs(blur) > 0f;
+			if (!_num)
+			{
+				_num = (Mathf.Abs(intensity) > 0f);
+			}
+			bool flag = _num;
 			float num = 1f * (float)width / (1f * (float)height);
 			float num2 = 0.001953125f;
 			RenderTexture renderTexture = null;

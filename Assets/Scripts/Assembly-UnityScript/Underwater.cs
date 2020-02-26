@@ -21,7 +21,7 @@ public class _Underwater : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024ActivateWaterController_0024283(_0024self__0024285);
+			return new _0024ActivateWaterController_0024283(_0024self__0024285).GetEnumerator();
 		}
 	}
 
@@ -38,7 +38,7 @@ public class _Underwater : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024ActivateGroundController_0024286(_0024self__0024288);
+			return new _0024ActivateGroundController_0024286(_0024self__0024288).GetEnumerator();
 		}
 	}
 

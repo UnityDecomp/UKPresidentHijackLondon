@@ -24,7 +24,7 @@ public class SkillWindow : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024ShowLearnedSkill_0024216(_0024id_0024220, _0024self__0024221);
+			return new _0024ShowLearnedSkill_0024216(_0024id_0024220, _0024self__0024221).GetEnumerator();
 		}
 	}
 

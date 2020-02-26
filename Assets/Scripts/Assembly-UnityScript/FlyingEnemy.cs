@@ -22,7 +22,7 @@ public class FlyingEnemy : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024Landing_0024179(_0024self__0024181);
+			return new _0024Landing_0024179(_0024self__0024181).GetEnumerator();
 		}
 	}
 

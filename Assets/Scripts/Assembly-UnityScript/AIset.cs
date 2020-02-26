@@ -25,7 +25,7 @@ public class AIset : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024KnockBack_0024127(_0024self__0024129);
+			return new _0024KnockBack_0024127(_0024self__0024129).GetEnumerator();
 		}
 	}
 
@@ -42,7 +42,7 @@ public class AIset : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024Attack_0024130(_0024self__0024133);
+			return new _0024Attack_0024130(_0024self__0024133).GetEnumerator();
 		}
 	}
 
@@ -74,7 +74,7 @@ public class AIset : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024UseSkill_0024134(_0024skill_0024142, _0024castTime_0024143, _0024delay_0024144, _0024anim_0024145, _0024dist_0024146, _0024self__0024147);
+			return new _0024UseSkill_0024134(_0024skill_0024142, _0024castTime_0024143, _0024delay_0024144, _0024anim_0024145, _0024dist_0024146, _0024self__0024147).GetEnumerator();
 		}
 	}
 
