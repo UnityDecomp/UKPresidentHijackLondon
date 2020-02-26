@@ -3,7 +3,7 @@ using DG.Tweening;
 
 namespace DG.Tweening.Core
 {
-	public class DOTweenSettings : ScriptableObject
+	public class _DOTweenSettings : ScriptableObject
 	{
 		public enum SettingsLocation
 		{

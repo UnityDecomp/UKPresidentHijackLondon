@@ -1,4 +1,4 @@
-﻿using Boo.Lang;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ public class StageClear : MonoBehaviour
 
         public override IEnumerator<WaitForSeconds> GetEnumerator()
         {
-            return new _0024(_0024self__0024178);
+            return new _0024Start_0024176(_0024self__0024178);
         }
     }
 
@@ -42,12 +42,12 @@ public class StageClear : MonoBehaviour
         text = "Text Here";
     }
 
-    public override IEnumerator Start()
+    public IEnumerator Start()
     {
         return new _0024Start_0024176(this).GetEnumerator();
     }
 
-    public override void OnGUI()
+    public void OnGUI()
     {
         if (show)
         {
@@ -55,7 +55,7 @@ public class StageClear : MonoBehaviour
         }
     }
 
-    public override void Main()
+    public void Main()
     {
     }
 }

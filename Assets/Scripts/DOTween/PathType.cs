@@ -3,7 +3,7 @@
 namespace DG.Tweening
 {
 	// Token: 0x0200000E RID: 14
-	public enum PathType
+	public enum _PathType
 	{
 		// Token: 0x04000053 RID: 83
 		Linear,

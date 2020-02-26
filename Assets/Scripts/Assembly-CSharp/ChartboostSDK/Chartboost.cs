@@ -11,169 +11,169 @@ namespace ChartboostSDK
 		// Token: 0x14000001 RID: 1
 		// (add) Token: 0x0600009D RID: 157 RVA: 0x00005210 File Offset: 0x00003610
 		// (remove) Token: 0x0600009E RID: 158 RVA: 0x00005244 File Offset: 0x00003644
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<bool> didInitialize;
 
 		// Token: 0x14000002 RID: 2
 		// (add) Token: 0x0600009F RID: 159 RVA: 0x00005278 File Offset: 0x00003678
 		// (remove) Token: 0x060000A0 RID: 160 RVA: 0x000052AC File Offset: 0x000036AC
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Func<CBLocation, bool> shouldDisplayInterstitial;
 
 		// Token: 0x14000003 RID: 3
 		// (add) Token: 0x060000A1 RID: 161 RVA: 0x000052E0 File Offset: 0x000036E0
 		// (remove) Token: 0x060000A2 RID: 162 RVA: 0x00005314 File Offset: 0x00003714
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didDisplayInterstitial;
 
 		// Token: 0x14000004 RID: 4
 		// (add) Token: 0x060000A3 RID: 163 RVA: 0x00005348 File Offset: 0x00003748
 		// (remove) Token: 0x060000A4 RID: 164 RVA: 0x0000537C File Offset: 0x0000377C
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didCacheInterstitial;
 
 		// Token: 0x14000005 RID: 5
 		// (add) Token: 0x060000A5 RID: 165 RVA: 0x000053B0 File Offset: 0x000037B0
 		// (remove) Token: 0x060000A6 RID: 166 RVA: 0x000053E4 File Offset: 0x000037E4
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didClickInterstitial;
 
 		// Token: 0x14000006 RID: 6
 		// (add) Token: 0x060000A7 RID: 167 RVA: 0x00005418 File Offset: 0x00003818
 		// (remove) Token: 0x060000A8 RID: 168 RVA: 0x0000544C File Offset: 0x0000384C
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didCloseInterstitial;
 
 		// Token: 0x14000007 RID: 7
 		// (add) Token: 0x060000A9 RID: 169 RVA: 0x00005480 File Offset: 0x00003880
 		// (remove) Token: 0x060000AA RID: 170 RVA: 0x000054B4 File Offset: 0x000038B4
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didDismissInterstitial;
 
 		// Token: 0x14000008 RID: 8
 		// (add) Token: 0x060000AB RID: 171 RVA: 0x000054E8 File Offset: 0x000038E8
 		// (remove) Token: 0x060000AC RID: 172 RVA: 0x0000551C File Offset: 0x0000391C
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation, CBImpressionError> didFailToLoadInterstitial;
 
 		// Token: 0x14000009 RID: 9
 		// (add) Token: 0x060000AD RID: 173 RVA: 0x00005550 File Offset: 0x00003950
 		// (remove) Token: 0x060000AE RID: 174 RVA: 0x00005584 File Offset: 0x00003984
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation, CBClickError> didFailToRecordClick;
 
 		// Token: 0x1400000A RID: 10
 		// (add) Token: 0x060000AF RID: 175 RVA: 0x000055B8 File Offset: 0x000039B8
 		// (remove) Token: 0x060000B0 RID: 176 RVA: 0x000055EC File Offset: 0x000039EC
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Func<CBLocation, bool> shouldDisplayMoreApps;
 
 		// Token: 0x1400000B RID: 11
 		// (add) Token: 0x060000B1 RID: 177 RVA: 0x00005620 File Offset: 0x00003A20
 		// (remove) Token: 0x060000B2 RID: 178 RVA: 0x00005654 File Offset: 0x00003A54
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didDisplayMoreApps;
 
 		// Token: 0x1400000C RID: 12
 		// (add) Token: 0x060000B3 RID: 179 RVA: 0x00005688 File Offset: 0x00003A88
 		// (remove) Token: 0x060000B4 RID: 180 RVA: 0x000056BC File Offset: 0x00003ABC
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didCacheMoreApps;
 
 		// Token: 0x1400000D RID: 13
 		// (add) Token: 0x060000B5 RID: 181 RVA: 0x000056F0 File Offset: 0x00003AF0
 		// (remove) Token: 0x060000B6 RID: 182 RVA: 0x00005724 File Offset: 0x00003B24
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didClickMoreApps;
 
 		// Token: 0x1400000E RID: 14
 		// (add) Token: 0x060000B7 RID: 183 RVA: 0x00005758 File Offset: 0x00003B58
 		// (remove) Token: 0x060000B8 RID: 184 RVA: 0x0000578C File Offset: 0x00003B8C
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didCloseMoreApps;
 
 		// Token: 0x1400000F RID: 15
 		// (add) Token: 0x060000B9 RID: 185 RVA: 0x000057C0 File Offset: 0x00003BC0
 		// (remove) Token: 0x060000BA RID: 186 RVA: 0x000057F4 File Offset: 0x00003BF4
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didDismissMoreApps;
 
 		// Token: 0x14000010 RID: 16
 		// (add) Token: 0x060000BB RID: 187 RVA: 0x00005828 File Offset: 0x00003C28
 		// (remove) Token: 0x060000BC RID: 188 RVA: 0x0000585C File Offset: 0x00003C5C
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation, CBImpressionError> didFailToLoadMoreApps;
 
 		// Token: 0x14000011 RID: 17
 		// (add) Token: 0x060000BD RID: 189 RVA: 0x00005890 File Offset: 0x00003C90
 		// (remove) Token: 0x060000BE RID: 190 RVA: 0x000058C4 File Offset: 0x00003CC4
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Func<CBLocation, bool> shouldDisplayRewardedVideo;
 
 		// Token: 0x14000012 RID: 18
 		// (add) Token: 0x060000BF RID: 191 RVA: 0x000058F8 File Offset: 0x00003CF8
 		// (remove) Token: 0x060000C0 RID: 192 RVA: 0x0000592C File Offset: 0x00003D2C
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didDisplayRewardedVideo;
 
 		// Token: 0x14000013 RID: 19
 		// (add) Token: 0x060000C1 RID: 193 RVA: 0x00005960 File Offset: 0x00003D60
 		// (remove) Token: 0x060000C2 RID: 194 RVA: 0x00005994 File Offset: 0x00003D94
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didCacheRewardedVideo;
 
 		// Token: 0x14000014 RID: 20
 		// (add) Token: 0x060000C3 RID: 195 RVA: 0x000059C8 File Offset: 0x00003DC8
 		// (remove) Token: 0x060000C4 RID: 196 RVA: 0x000059FC File Offset: 0x00003DFC
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didClickRewardedVideo;
 
 		// Token: 0x14000015 RID: 21
 		// (add) Token: 0x060000C5 RID: 197 RVA: 0x00005A30 File Offset: 0x00003E30
 		// (remove) Token: 0x060000C6 RID: 198 RVA: 0x00005A64 File Offset: 0x00003E64
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didCloseRewardedVideo;
 
 		// Token: 0x14000016 RID: 22
 		// (add) Token: 0x060000C7 RID: 199 RVA: 0x00005A98 File Offset: 0x00003E98
 		// (remove) Token: 0x060000C8 RID: 200 RVA: 0x00005ACC File Offset: 0x00003ECC
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didDismissRewardedVideo;
 
 		// Token: 0x14000017 RID: 23
 		// (add) Token: 0x060000C9 RID: 201 RVA: 0x00005B00 File Offset: 0x00003F00
 		// (remove) Token: 0x060000CA RID: 202 RVA: 0x00005B34 File Offset: 0x00003F34
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation, int> didCompleteRewardedVideo;
 
 		// Token: 0x14000018 RID: 24
 		// (add) Token: 0x060000CB RID: 203 RVA: 0x00005B68 File Offset: 0x00003F68
 		// (remove) Token: 0x060000CC RID: 204 RVA: 0x00005B9C File Offset: 0x00003F9C
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation, CBImpressionError> didFailToLoadRewardedVideo;
 
 		// Token: 0x14000019 RID: 25
 		// (add) Token: 0x060000CD RID: 205 RVA: 0x00005BD0 File Offset: 0x00003FD0
 		// (remove) Token: 0x060000CE RID: 206 RVA: 0x00005C04 File Offset: 0x00004004
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> didCacheInPlay;
 
 		// Token: 0x1400001A RID: 26
 		// (add) Token: 0x060000CF RID: 207 RVA: 0x00005C38 File Offset: 0x00004038
 		// (remove) Token: 0x060000D0 RID: 208 RVA: 0x00005C6C File Offset: 0x0000406C
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation, CBImpressionError> didFailToLoadInPlay;
 
 		// Token: 0x1400001B RID: 27
 		// (add) Token: 0x060000D1 RID: 209 RVA: 0x00005CA0 File Offset: 0x000040A0
 		// (remove) Token: 0x060000D2 RID: 210 RVA: 0x00005CD4 File Offset: 0x000040D4
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action<CBLocation> willDisplayVideo;
 
 		// Token: 0x1400001C RID: 28
 		// (add) Token: 0x060000D3 RID: 211 RVA: 0x00005D08 File Offset: 0x00004108
 		// (remove) Token: 0x060000D4 RID: 212 RVA: 0x00005D3C File Offset: 0x0000413C
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		
 		public static event Action didPauseClickForConfirmation;
 
 		// Token: 0x060000D5 RID: 213 RVA: 0x00005D70 File Offset: 0x00004170

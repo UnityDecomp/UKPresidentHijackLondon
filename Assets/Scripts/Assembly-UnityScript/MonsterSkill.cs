@@ -1,4 +1,4 @@
-﻿using Boo.Lang;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ public class MonsterSkill : MonoBehaviour
 
         public override IEnumerator<WaitForSeconds> GetEnumerator()
         {
-            return new _0024(_0024self__0024190);
+            return new _0024Start_0024188(_0024self__0024190);
         }
     }
 
@@ -39,7 +39,7 @@ public class MonsterSkill : MonoBehaviour
 
         public override IEnumerator<WaitForSeconds> GetEnumerator()
         {
-            return new _0024(_0024self__0024196);
+            return new _0024UseSkill_0024191(_0024self__0024196);
         }
     }
 
@@ -64,12 +64,12 @@ public class MonsterSkill : MonoBehaviour
         skillSet = new SkillSetting[1];
     }
 
-    public override IEnumerator Start()
+    public IEnumerator Start()
     {
         return new _0024Start_0024188(this).GetEnumerator();
     }
 
-    public override void Update()
+    public void Update()
     {
         if (begin && !onSkill)
         {
@@ -85,12 +85,12 @@ public class MonsterSkill : MonoBehaviour
         }
     }
 
-    public override IEnumerator UseSkill()
+    public IEnumerator UseSkill()
     {
         return new _0024UseSkill_0024191(this).GetEnumerator();
     }
 
-    public override void Main()
+    public void Main()
     {
     }
 }

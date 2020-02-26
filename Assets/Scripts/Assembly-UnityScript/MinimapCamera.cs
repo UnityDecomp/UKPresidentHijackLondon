@@ -1,4 +1,4 @@
-﻿using Boo.Lang;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ public class MinimapCamera : MonoBehaviour
 
         public override IEnumerator<WaitForSeconds> GetEnumerator()
         {
-            return new _0024(_0024self__0024187);
+            return new _0024Start_0024185(_0024self__0024187);
         }
     }
 
@@ -37,12 +37,12 @@ public class MinimapCamera : MonoBehaviour
         zoomMax = 70f;
     }
 
-    public override IEnumerator Start()
+    public IEnumerator Start()
     {
         return new _0024Start_0024185(this).GetEnumerator();
     }
 
-    public override void Update()
+    public void Update()
     {
         if ((bool)target)
         {
@@ -66,7 +66,7 @@ public class MinimapCamera : MonoBehaviour
         }
     }
 
-    public override void FindTarget()
+    public void FindTarget()
     {
         if (!target)
         {
@@ -78,7 +78,7 @@ public class MinimapCamera : MonoBehaviour
         }
     }
 
-    public override void Main()
+    public void Main()
     {
     }
 }

@@ -1,4 +1,4 @@
-﻿using Boo.Lang;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,22 +6,22 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [Serializable]
-public class Underwater : MonoBehaviour
+public class _Underwater : MonoBehaviour
 {
 	[Serializable]
 	[CompilerGenerated]
 	internal sealed class _0024ActivateWaterController_0024283 : GenericGenerator<WaitForSeconds>
 	{
-		internal Underwater _0024self__0024285;
+		internal _Underwater _0024self__0024285;
 
-		public _0024ActivateWaterController_0024283(Underwater self_)
+		public _0024ActivateWaterController_0024283(_Underwater self_)
 		{
 			_0024self__0024285 = self_;
 		}
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024(_0024self__0024285);
+			return new _0024ActivateWaterController_0024283(_0024self__0024285);
 		}
 	}
 
@@ -29,16 +29,16 @@ public class Underwater : MonoBehaviour
 	[CompilerGenerated]
 	internal sealed class _0024ActivateGroundController_0024286 : GenericGenerator<WaitForSeconds>
 	{
-		internal Underwater _0024self__0024288;
+		internal _Underwater _0024self__0024288;
 
-		public _0024ActivateGroundController_0024286(Underwater self_)
+		public _0024ActivateGroundController_0024286(_Underwater self_)
 		{
 			_0024self__0024288 = self_;
 		}
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024(_0024self__0024288);
+			return new _0024ActivateGroundController_0024286(_0024self__0024288);
 		}
 	}
 
@@ -84,7 +84,7 @@ public class Underwater : MonoBehaviour
 
 	private bool jumping;
 
-	public Underwater()
+	public _Underwater()
 	{
 		surfaceEnterPlus = 0.4f;
 		surfaceExitPlus = 0.95f;
@@ -96,7 +96,7 @@ public class Underwater : MonoBehaviour
 		cannotAttack = true;
 	}
 
-	public override void Start()
+	public void Start()
 	{
 		if (!mainCam)
 		{
@@ -116,7 +116,7 @@ public class Underwater : MonoBehaviour
 		}
 	}
 
-	public override void Update()
+	public void Update()
 	{
 		if (!mainCam)
 		{
@@ -179,17 +179,17 @@ public class Underwater : MonoBehaviour
 		}
 	}
 
-	public override IEnumerator ActivateWaterController()
+	public IEnumerator ActivateWaterController()
 	{
 		return new _0024ActivateWaterController_0024283(this).GetEnumerator();
 	}
 
-	public override IEnumerator ActivateGroundController()
+	public IEnumerator ActivateGroundController()
 	{
 		return new _0024ActivateGroundController_0024286(this).GetEnumerator();
 	}
 
-	public override void Main()
+	public void Main()
 	{
 	}
 }

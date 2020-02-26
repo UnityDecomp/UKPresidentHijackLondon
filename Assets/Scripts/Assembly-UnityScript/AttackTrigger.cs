@@ -1,10 +1,10 @@
-﻿using Boo.Lang;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityScript.Lang;
+
 
 [Serializable]
 [RequireComponent(typeof(QuestStat))]
@@ -31,7 +31,7 @@ public class AttackTrigger : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024(_0024self__0024153);
+			return new _0024AttackCombo_0024148(_0024self__0024153);
 		}
 	}
 
@@ -48,7 +48,7 @@ public class AttackTrigger : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024(_0024self__0024156);
+			return new _0024MeleeDash_0024154(_0024self__0024156);
 		}
 	}
 
@@ -68,7 +68,7 @@ public class AttackTrigger : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024(_0024skillID_0024163, _0024self__0024164);
+			return new _0024MagicSkill_0024157(_0024skillID_0024163, _0024self__0024164);
 		}
 	}
 
@@ -85,7 +85,7 @@ public class AttackTrigger : MonoBehaviour
 
 		public override IEnumerator<WaitForSeconds> GetEnumerator()
 		{
-			return new _0024(_0024self__0024167);
+			return new _0024KnockBack_0024165(_0024self__0024167);
 		}
 	}
 
@@ -187,7 +187,7 @@ public class AttackTrigger : MonoBehaviour
 		knock = Vector3.zero;
 	}
 
-	public override void Awake()
+	public void Awake()
 	{
 		this.gameObject.tag = "Player";
 		if (!Maincam)
@@ -262,7 +262,7 @@ public class AttackTrigger : MonoBehaviour
 		}
 	}
 
-	public override void Update()
+	public void Update()
 	{
 		Status status = (Status)GetComponent(typeof(Status));
 		if (freeze || atkDelay || Time.timeScale == 0f || status.freeze)
@@ -319,7 +319,7 @@ public class AttackTrigger : MonoBehaviour
 		}
 	}
 
-	public override void OnGUI()
+	public void OnGUI()
 	{
 		if (aimingType == AimType.Normal)
 		{
@@ -347,22 +347,22 @@ public class AttackTrigger : MonoBehaviour
 		}
 	}
 
-	public override IEnumerator AttackCombo()
+	public IEnumerator AttackCombo()
 	{
 		return new _0024AttackCombo_0024148(this).GetEnumerator();
 	}
 
-	public override IEnumerator MeleeDash()
+	public IEnumerator MeleeDash()
 	{
 		return new _0024MeleeDash_0024154(this).GetEnumerator();
 	}
 
-	public override IEnumerator MagicSkill(int skillID)
+	public IEnumerator MagicSkill(int skillID)
 	{
 		return new _0024MagicSkill_0024157(skillID, this).GetEnumerator();
 	}
 
-	public override void Flinch(Vector3 dir)
+	public void Flinch(Vector3 dir)
 	{
 		knock = dir;
 		if ((bool)sound.hurtVoice && ((Status)GetComponent(typeof(Status))).health >= 1)
@@ -379,12 +379,12 @@ public class AttackTrigger : MonoBehaviour
 		((CharacterMotor)GetComponent(typeof(CharacterMotor))).canControl = true;
 	}
 
-	public override IEnumerator KnockBack()
+	public IEnumerator KnockBack()
 	{
 		return new _0024KnockBack_0024165(this).GetEnumerator();
 	}
 
-	public override void Aiming()
+	public void Aiming()
 	{
 		Ray ray = Maincam.GetComponent<Camera>().ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
 		RaycastHit hitInfo = default(RaycastHit);
@@ -398,7 +398,7 @@ public class AttackTrigger : MonoBehaviour
 		}
 	}
 
-	public override void Main()
+	public void Main()
 	{
 	}
 }

@@ -2,7 +2,7 @@
 
 // Token: 0x02000005 RID: 5
 [Serializable]
-public enum ItType
+public enum _ItType
 {
 	// Token: 0x04000010 RID: 16
 	Usable,
