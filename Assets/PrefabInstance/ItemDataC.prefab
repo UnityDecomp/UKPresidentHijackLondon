@@ -1,0 +1,386 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1149232024000569}
+  m_IsPrefabParent: 1
+--- !u!1 &1149232024000569
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4522889292934688}
+  - component: {fileID: 114864093060854264}
+  m_Layer: 0
+  m_Name: ItemDataC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4522889292934688
+Transform:
+  m_GameObject: {fileID: 1149232024000569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.46934, y: 0.09645724, z: 13.94498}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114864093060854264
+MonoBehaviour:
+  m_GameObject: {fileID: 1149232024000569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80f301ac1fd7ac4ab898b46ef5780df, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  usableItem:
+  - itemName:
+    icon: {fileID: 0}
+    model: {fileID: 0}
+    description:
+    price: 10
+    hpRecover: 0
+    mpRecover: 0
+    atkPlus: 0
+    defPlus: 0
+    matkPlus: 0
+    mdefPlus: 0
+    unusable: 0
+  - itemName: Apple
+    icon: {fileID: 2800000, guid: 39eeb12856942f84eb4a0dc799861661, type: 3}
+    model: {fileID: 0}
+    description: Recover 50 HP
+    price: 100
+    hpRecover: 50
+    mpRecover: 0
+    atkPlus: 0
+    defPlus: 0
+    matkPlus: 0
+    mdefPlus: 0
+    unusable: 0
+  - itemName: Ether
+    icon: {fileID: 2800000, guid: 0a9e14e11e68f8b4e92aa8e292b46942, type: 3}
+    model: {fileID: 0}
+    description: Recover 50 MP
+    price: 100
+    hpRecover: 0
+    mpRecover: 50
+    atkPlus: 0
+    defPlus: 0
+    matkPlus: 0
+    mdefPlus: 0
+    unusable: 0
+  - itemName: High Potion
+    icon: {fileID: 2800000, guid: 300b873f0c025f745b15323ce109167c, type: 3}
+    model: {fileID: 0}
+    description: Recover 200 HP
+    price: 300
+    hpRecover: 200
+    mpRecover: 0
+    atkPlus: 0
+    defPlus: 0
+    matkPlus: 0
+    mdefPlus: 0
+    unusable: 0
+  - itemName: High Ether
+    icon: {fileID: 2800000, guid: edc045e8427b55b44be3a454c5af1a4c, type: 3}
+    model: {fileID: 0}
+    description: Recover 200 MP
+    price: 300
+    hpRecover: 0
+    mpRecover: 200
+    atkPlus: 0
+    defPlus: 0
+    matkPlus: 0
+    mdefPlus: 0
+    unusable: 0
+  - itemName: Trunk
+    icon: {fileID: 0}
+    model: {fileID: 0}
+    description:
+    price: 50
+    hpRecover: 0
+    mpRecover: 0
+    atkPlus: 0
+    defPlus: 0
+    matkPlus: 0
+    mdefPlus: 0
+    unusable: 1
+  - itemName: Spider Web
+    icon: {fileID: 2800000, guid: 3f7f52e4f81f53a489d2b5dec6ff3da1, type: 3}
+    model: {fileID: 0}
+    description:
+    price: 70
+    hpRecover: 0
+    mpRecover: 0
+    atkPlus: 0
+    defPlus: 0
+    matkPlus: 0
+    mdefPlus: 0
+    unusable: 1
+  - itemName: Spiper Venom
+    icon: {fileID: 2800000, guid: 323170740f9fc3244a4d29a55220d876, type: 3}
+    model: {fileID: 0}
+    description:
+    price: 80
+    hpRecover: 0
+    mpRecover: 0
+    atkPlus: 0
+    defPlus: 0
+    matkPlus: 0
+    mdefPlus: 0
+    unusable: 1
+  - itemName: new
+    icon: {fileID: 2800000, guid: 39eeb12856942f84eb4a0dc799861661, type: 3}
+    model: {fileID: 0}
+    description:
+    price: 80
+    hpRecover: 40
+    mpRecover: 0
+    atkPlus: 0
+    defPlus: 0
+    matkPlus: 0
+    mdefPlus: 0
+    unusable: 0
+  equipment:
+  - itemName:
+    icon: {fileID: 0}
+    model: {fileID: 0}
+    assignAllWeapon: 1
+    description:
+    price: 10
+    weaponType: 10
+    attack: 5
+    defense: 0
+    magicAttack: 0
+    magicDefense: 0
+    EquipmentType: 0
+    attackPrefab: {fileID: 0}
+    attackCombo:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    idleAnimation: {fileID: 0}
+    runAnimation: {fileID: 0}
+    rightAnimation: {fileID: 0}
+    leftAnimation: {fileID: 0}
+    backAnimation: {fileID: 0}
+    jumpAnimation: {fileID: 0}
+    whileAttack: 0
+    attackSpeed: 0.18
+    attackDelay: 0.12
+  - itemName: Steel Sword
+    icon: {fileID: 2800000, guid: b5359ca6e2d280a48b7e709e5a63fa3b, type: 3}
+    model: {fileID: 1767060261600211, guid: 941d841950aa2da4ab18f7b128192de7, type: 2}
+    assignAllWeapon: 1
+    description: ATK 5 MATK 5
+    price: 1000
+    weaponType: 0
+    attack: 5
+    defense: 0
+    magicAttack: 5
+    magicDefense: 0
+    EquipmentType: 0
+    attackPrefab: {fileID: 1074436126036733, guid: 22dd0921830ffe542b93639fd11bd0e6, type: 2}
+    attackCombo:
+    - {fileID: 7400000, guid: 229bfbce9e952b94ba2a0d7002c121e3, type: 2}
+    - {fileID: 7400000, guid: 5b175dfdd5b769b4e84d7c4303c8c838, type: 2}
+    - {fileID: 7400000, guid: 961978e4d05a6cb4b8e7f123104225bf, type: 2}
+    - {fileID: 7400000, guid: 0ffb5737edf0b184a9971cbbb9b128e3, type: 2}
+    - {fileID: 7400000, guid: 425bb3848b499ba4ba5e6f44754b2aa8, type: 2}
+    idleAnimation: {fileID: 7400000, guid: 497afb0cc87c9474cb161771ace8ec24, type: 2}
+    runAnimation: {fileID: 7400000, guid: 0a4a0a62ddeb1f84d85208394159b48d, type: 2}
+    rightAnimation: {fileID: 7400000, guid: 2fc7b4a5ed903594599ab3f65dff7648, type: 2}
+    leftAnimation: {fileID: 7400000, guid: 29e53ecc7c45884469d8b0f02c9f641e, type: 2}
+    backAnimation: {fileID: 7400000, guid: ec013529a8701cb488aae129cb701f85, type: 2}
+    jumpAnimation: {fileID: 7400000, guid: cac0f1affcedfd746ab1dfc344c7182a, type: 2}
+    whileAttack: 0
+    attackSpeed: 0.18
+    attackDelay: 0.12
+  - itemName: Falchion
+    icon: {fileID: 2800000, guid: ff111a217f2144e4995aa6a4f4bdae6f, type: 3}
+    model: {fileID: 1770209839528504, guid: ba317f69f05e6db4fb70b929938eaf80, type: 2}
+    assignAllWeapon: 1
+    description: ATK 15
+    price: 1600
+    weaponType: 0
+    attack: 15
+    defense: 0
+    magicAttack: 0
+    magicDefense: 0
+    EquipmentType: 0
+    attackPrefab: {fileID: 1074436126036733, guid: 22dd0921830ffe542b93639fd11bd0e6, type: 2}
+    attackCombo:
+    - {fileID: 7400000, guid: 229bfbce9e952b94ba2a0d7002c121e3, type: 2}
+    - {fileID: 7400000, guid: 5b175dfdd5b769b4e84d7c4303c8c838, type: 2}
+    - {fileID: 7400000, guid: 961978e4d05a6cb4b8e7f123104225bf, type: 2}
+    - {fileID: 7400000, guid: 0ffb5737edf0b184a9971cbbb9b128e3, type: 2}
+    - {fileID: 7400000, guid: 425bb3848b499ba4ba5e6f44754b2aa8, type: 2}
+    idleAnimation: {fileID: 7400000, guid: 497afb0cc87c9474cb161771ace8ec24, type: 2}
+    runAnimation: {fileID: 7400000, guid: 0a4a0a62ddeb1f84d85208394159b48d, type: 2}
+    rightAnimation: {fileID: 7400000, guid: 2fc7b4a5ed903594599ab3f65dff7648, type: 2}
+    leftAnimation: {fileID: 7400000, guid: 29e53ecc7c45884469d8b0f02c9f641e, type: 2}
+    backAnimation: {fileID: 7400000, guid: ec013529a8701cb488aae129cb701f85, type: 2}
+    jumpAnimation: {fileID: 7400000, guid: cac0f1affcedfd746ab1dfc344c7182a, type: 2}
+    whileAttack: 0
+    attackSpeed: 0.18
+    attackDelay: 0.12
+  - itemName: Magic Blade
+    icon: {fileID: 2800000, guid: 1c9b36455ded88c4ab11e7ed0e71b322, type: 3}
+    model: {fileID: 1517004836135360, guid: 369a9bc5eafd5ba45b597c1318bd0f49, type: 2}
+    assignAllWeapon: 1
+    description: ATK 25 MATK 25 (Poison 40%)
+    price: 1600
+    weaponType: 0
+    attack: 25
+    defense: 0
+    magicAttack: 25
+    magicDefense: 0
+    EquipmentType: 0
+    attackPrefab: {fileID: 1667127429897835, guid: 76c61e54f98b6254d9a0eb310b175964, type: 2}
+    attackCombo:
+    - {fileID: 7400000, guid: 229bfbce9e952b94ba2a0d7002c121e3, type: 2}
+    - {fileID: 7400000, guid: 5b175dfdd5b769b4e84d7c4303c8c838, type: 2}
+    - {fileID: 7400000, guid: 961978e4d05a6cb4b8e7f123104225bf, type: 2}
+    - {fileID: 7400000, guid: 0ffb5737edf0b184a9971cbbb9b128e3, type: 2}
+    - {fileID: 7400000, guid: 425bb3848b499ba4ba5e6f44754b2aa8, type: 2}
+    idleAnimation: {fileID: 7400000, guid: 497afb0cc87c9474cb161771ace8ec24, type: 2}
+    runAnimation: {fileID: 7400000, guid: 0a4a0a62ddeb1f84d85208394159b48d, type: 2}
+    rightAnimation: {fileID: 7400000, guid: 2fc7b4a5ed903594599ab3f65dff7648, type: 2}
+    leftAnimation: {fileID: 7400000, guid: 29e53ecc7c45884469d8b0f02c9f641e, type: 2}
+    backAnimation: {fileID: 7400000, guid: ec013529a8701cb488aae129cb701f85, type: 2}
+    jumpAnimation: {fileID: 7400000, guid: cac0f1affcedfd746ab1dfc344c7182a, type: 2}
+    whileAttack: 0
+    attackSpeed: 0.18
+    attackDelay: 0.12
+  - itemName: Fireblend
+    icon: {fileID: 2800000, guid: 74a148f9297ad7f479465c7f7cc25c99, type: 3}
+    model: {fileID: 1862534924117006, guid: 026a66ff12d863d438eff671e6ebcd23, type: 2}
+    assignAllWeapon: 1
+    description: Cast Firebolt when Attack
+    price: 3300
+    weaponType: 0
+    attack: 5
+    defense: 0
+    magicAttack: 10
+    magicDefense: 0
+    EquipmentType: 0
+    attackPrefab: {fileID: 1805816424648354, guid: d5b1735917a76bb4c962debd411eff0d, type: 2}
+    attackCombo:
+    - {fileID: 7400000, guid: 229bfbce9e952b94ba2a0d7002c121e3, type: 2}
+    - {fileID: 7400000, guid: 5b175dfdd5b769b4e84d7c4303c8c838, type: 2}
+    - {fileID: 7400000, guid: 961978e4d05a6cb4b8e7f123104225bf, type: 2}
+    - {fileID: 7400000, guid: 0ffb5737edf0b184a9971cbbb9b128e3, type: 2}
+    - {fileID: 7400000, guid: 425bb3848b499ba4ba5e6f44754b2aa8, type: 2}
+    idleAnimation: {fileID: 7400000, guid: 497afb0cc87c9474cb161771ace8ec24, type: 2}
+    runAnimation: {fileID: 7400000, guid: 0a4a0a62ddeb1f84d85208394159b48d, type: 2}
+    rightAnimation: {fileID: 7400000, guid: 2fc7b4a5ed903594599ab3f65dff7648, type: 2}
+    leftAnimation: {fileID: 7400000, guid: 29e53ecc7c45884469d8b0f02c9f641e, type: 2}
+    backAnimation: {fileID: 7400000, guid: ec013529a8701cb488aae129cb701f85, type: 2}
+    jumpAnimation: {fileID: 7400000, guid: cac0f1affcedfd746ab1dfc344c7182a, type: 2}
+    whileAttack: 0
+    attackSpeed: 0.18
+    attackDelay: 0.12
+  - itemName: Light Armor
+    icon: {fileID: 2800000, guid: 379f86e7304aedf4eb6b7222feeacac5, type: 3}
+    model: {fileID: 0}
+    assignAllWeapon: 0
+    description: DEF 5
+    price: 1200
+    weaponType: 10
+    attack: 0
+    defense: 5
+    magicAttack: 0
+    magicDefense: 0
+    EquipmentType: 1
+    attackPrefab: {fileID: 0}
+    attackCombo: []
+    idleAnimation: {fileID: 0}
+    runAnimation: {fileID: 0}
+    rightAnimation: {fileID: 0}
+    leftAnimation: {fileID: 0}
+    backAnimation: {fileID: 0}
+    jumpAnimation: {fileID: 0}
+    whileAttack: 0
+    attackSpeed: 0.18
+    attackDelay: 0.12
+  - itemName: Heavy Armor
+    icon: {fileID: 2800000, guid: 6102e426efd2d8945808a7d0d455c2e5, type: 3}
+    model: {fileID: 0}
+    assignAllWeapon: 0
+    description: DEF 15
+    price: 2200
+    weaponType: 10
+    attack: 0
+    defense: 15
+    magicAttack: 0
+    magicDefense: 0
+    EquipmentType: 1
+    attackPrefab: {fileID: 0}
+    attackCombo: []
+    idleAnimation: {fileID: 0}
+    runAnimation: {fileID: 0}
+    rightAnimation: {fileID: 0}
+    leftAnimation: {fileID: 0}
+    backAnimation: {fileID: 0}
+    jumpAnimation: {fileID: 0}
+    whileAttack: 0
+    attackSpeed: 0.18
+    attackDelay: 0.12
+  - itemName: Magic Coat
+    icon: {fileID: 2800000, guid: 1a243b9677456464b90b5c788f4b0b99, type: 3}
+    model: {fileID: 0}
+    assignAllWeapon: 0
+    description: DEF 20 MDEF 20
+    price: 2200
+    weaponType: 10
+    attack: 0
+    defense: 20
+    magicAttack: 0
+    magicDefense: 20
+    EquipmentType: 1
+    attackPrefab: {fileID: 0}
+    attackCombo: []
+    idleAnimation: {fileID: 0}
+    runAnimation: {fileID: 0}
+    rightAnimation: {fileID: 0}
+    leftAnimation: {fileID: 0}
+    backAnimation: {fileID: 0}
+    jumpAnimation: {fileID: 0}
+    whileAttack: 0
+    attackSpeed: 0.18
+    attackDelay: 0.12
+  - itemName: Bow
+    icon: {fileID: 2800000, guid: 9c1b337c558b626479852d2115f6ef46, type: 3}
+    model: {fileID: 1677016028504605, guid: f870b081b57862d4c9218b9cd347da2e, type: 2}
+    assignAllWeapon: 0
+    description: MDEF 20
+    price: 1500
+    weaponType: 1
+    attack: 10
+    defense: 0
+    magicAttack: 0
+    magicDefense: 0
+    EquipmentType: 0
+    attackPrefab: {fileID: 1123853995707191, guid: 9b4a38c8f1715cd488ec70dba7dfc766, type: 2}
+    attackCombo:
+    - {fileID: 7400000, guid: 9ed4056a34b62b84f91a08c991d5ffe1, type: 2}
+    - {fileID: 7400000, guid: 9ed4056a34b62b84f91a08c991d5ffe1, type: 2}
+    - {fileID: 7400000, guid: 9ed4056a34b62b84f91a08c991d5ffe1, type: 2}
+    idleAnimation: {fileID: 7400000, guid: 301d96890c05e4e46b83dec260ded74d, type: 2}
+    runAnimation: {fileID: 7400000, guid: 0ad3551a3ddc1244abea42b7753e90ec, type: 2}
+    rightAnimation: {fileID: 7400000, guid: 7ea1c6b3f3cefee4685cdd8645acf750, type: 2}
+    leftAnimation: {fileID: 7400000, guid: f91bf2a8465bf764583ef849b29eec50, type: 2}
+    backAnimation: {fileID: 7400000, guid: ac3fc0969c7fe6b4eb970672a7b9eda9, type: 2}
+    jumpAnimation: {fileID: 7400000, guid: cac0f1affcedfd746ab1dfc344c7182a, type: 2}
+    whileAttack: 1
+    attackSpeed: 0.24
+    attackDelay: 0.18

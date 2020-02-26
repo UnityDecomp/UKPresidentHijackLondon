@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1770209839528504}
+  m_IsPrefabParent: 1
+--- !u!1 &1770209839528504
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4823942045958008}
+  m_Layer: 0
+  m_Name: Falchion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4823942045958008
+Transform:
+  m_GameObject: {fileID: 1770209839528504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3069491, y: -8.581944, z: -4.235336}
+  m_LocalScale: {x: 1.90603, y: 2.862138, z: 2.219794}
+  m_Children:
+  - {fileID: 4732886538891682}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1219255956092365
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4732886538891682}
+  - component: {fileID: 33621956586215395}
+  - component: {fileID: 23720739783898556}
+  - component: {fileID: 111725184589853943}
+  m_Layer: 0
+  m_Name: Falchion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4732886538891682
+Transform:
+  m_GameObject: {fileID: 1219255956092365}
+  m_LocalRotation: {x: 0.7069492, y: 0, z: 0, w: 0.7072643}
+  m_LocalPosition: {x: 0, y: 0.03441559, z: -1.997746E-05}
+  m_LocalScale: {x: 1, y: 1.289371, z: 0.7755721}
+  m_Children: []
+  m_Father: {fileID: 4823942045958008}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 89.97447, y: 0, z: 0}
+--- !u!33 &33621956586215395
+MeshFilter:
+  m_GameObject: {fileID: 1219255956092365}
+  m_Mesh: {fileID: 4300000, guid: 7d426601fec92b84c86b8c649474a21d, type: 2}
+--- !u!23 &23720739783898556
+MeshRenderer:
+  m_GameObject: {fileID: 1219255956092365}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: cee84de2252fa874191aff935abb9590, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!111 &111725184589853943
+Animation:
+  m_GameObject: {fileID: 1219255956092365}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

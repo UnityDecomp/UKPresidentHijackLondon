@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1074436126036733}
+  m_IsPrefabParent: 1
+--- !u!1 &1074436126036733
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4085302003630890}
+  - component: {fileID: 33617741374585180}
+  - component: {fileID: 65093046714169457}
+  - component: {fileID: 23208590981382544}
+  - component: {fileID: 54696717995514160}
+  - component: {fileID: 114460079901246209}
+  - component: {fileID: 114149324803253251}
+  m_Layer: 0
+  m_Name: Melee
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4085302003630890
+Transform:
+  m_GameObject: {fileID: 1074436126036733}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.154949, y: 1.334876, z: -8.764628}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &33617741374585180
+MeshFilter:
+  m_GameObject: {fileID: 1074436126036733}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65093046714169457
+BoxCollider:
+  m_GameObject: {fileID: 1074436126036733}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &23208590981382544
+MeshRenderer:
+  m_GameObject: {fileID: 1074436126036733}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!54 &54696717995514160
+Rigidbody:
+  m_GameObject: {fileID: 1074436126036733}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &114460079901246209
+MonoBehaviour:
+  m_GameObject: {fileID: 1074436126036733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf441b957b2d740a9af212def9e8af, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  damage: 8
+  damageMax: 15
+  totalDamage: 0
+  variance: 15
+  shooterTag: Player
+  shooter: {fileID: 0}
+  Popup: {fileID: 4894689195727965, guid: de01bf47423960c46a11e32d4c67ffeb, type: 2}
+  hitEffect: {fileID: 1599664294918502, guid: 312e6a8e14988244792a73c757236e83, type: 2}
+  woodEffect: {fileID: 1517393965716260, guid: ec8b98d5940039d41b238fe35f343f38, type: 2}
+  flinch: 1
+  penetrate: 0
+  AttackType: 0
+  element: 0
+--- !u!114 &114149324803253251
+MonoBehaviour:
+  m_GameObject: {fileID: 1074436126036733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97512afe2a9a9654c9940100f6a2f3db, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Speed: 5
+  relativeDirection: {x: 0, y: 0, z: 1}
+  duration: 0.2
+  shooterTag: Player
+  hitEffect: {fileID: 0}
+  wallEffect: {fileID: 0}
